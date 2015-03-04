@@ -40,6 +40,9 @@ gem 'font-awesome-sass'
 
 gem 'kaminari'
 
+gem 'rspec-rails'
+
+gem "factory_girl_rails", "~> 4.0"
 # Use unicorn as the app server
 # gem 'unicorn'
 
