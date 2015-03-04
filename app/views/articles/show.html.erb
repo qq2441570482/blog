@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="panel">
+          <div class="panel-heading">
+            <%= @article.title %>
+          </div>
+          <div class="panel-body">
+            <%= markdown(@article.content) %>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <form action="" class="search-form">
+              <div class="input-group">
+                <input type="text" class="form-control">
+                <div class="input-group-btn">
+                  <input type="button" class="btn btn-default" value="search">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
