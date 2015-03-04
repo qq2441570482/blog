@@ -7,27 +7,14 @@
             <%= @article.title %>
           </div>
           <div class="panel-body">
-            <%= markdown(@article.content) %>
+           <% if @article.content %>
+                <%= markdown(@article.content) %>
+          <% end %>
           </div>
         </div>
       </div>
 
-      <div class="col-md-3">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <%= form_tag welcome_index_path do %>
-                <div class="input-group">
-                  <%= text_field_tag :condition, nil, class: 'form-control' %>
-                  <div class="input-group-btn">
-                    <%= submit_tag '搜索', class: 'btn btn-default' %>
-                  </div>
-                </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
+      <%= render 'shared/search' %>
     </div>
   </div>
-
-
 </div>

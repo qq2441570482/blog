@@ -38,6 +38,8 @@ gem 'pygments.rb'
 
 gem 'font-awesome-sass'
 
+gem 'kaminari'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
