@@ -1,36 +1,37 @@
 <div class="main">
   <div class="container">
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-offset-1 col-md-9">
         <div class="panel">
           <div class="panel-body">
-            <ul class="list-group">
-              <% @articles.each do |article| %>
-                  <li class="list-group-item">
-                    <%= link_to article.title, article_path(article), class: 'btn btn-link' %>
-                  </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
+            <table class="table">
+              <thead>
+              <tr>
+                <td>文章编号</td>
+                <td>标题</td>
+                <td>修改</td>
+              </tr>
+              </thead>
 
-      <div class="col-md-3">
-        <div class="panel panel-default">
-          <div class="panel-body">
-            <form action="" class="search-form">
-              <div class="input-group">
-                <input type="text" class="form-control">
-                <div class="input-group-btn">
-                  <input type="button" class="btn btn-default" value="search">
-                </div>
-              </div>
-            </form>
+              <tbody>
+              <% @articles.each do |article| %>
+                  <tr>
+                    <td>
+                      <%= article.id %>
+                    </td>
+                    <td>
+                      <%= link_to article.title, article_path(article) %>
+                    </td>
+                    <td>
+                      <%= link_to '修改', edit_article_path(article), class: 'btn btn-danger' %>
+                    </td>
+                  </tr>
+              <% end %>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-
 </div>

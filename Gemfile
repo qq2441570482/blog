@@ -36,6 +36,8 @@ gem 'redcarpet'
 
 gem 'pygments.rb'
 
+gem 'font-awesome-sass'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

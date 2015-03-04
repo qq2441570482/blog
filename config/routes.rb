@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+  post 'welcome/index' => 'welcome#index'
+
   resources :articles
 
   resources :sessions , only: [:new,:create,:destroy]

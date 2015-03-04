@@ -9,5 +9,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def search
+
+  end
 
 end

@@ -15,14 +15,14 @@
       <div class="col-md-3">
         <div class="panel panel-default">
           <div class="panel-body">
-            <form action="" class="search-form">
-              <div class="input-group">
-                <input type="text" class="form-control">
-                <div class="input-group-btn">
-                  <input type="button" class="btn btn-default" value="search">
+            <%= form_tag welcome_index_path do %>
+                <div class="input-group">
+                  <%= text_field_tag :condition, nil, class: 'form-control' %>
+                  <div class="input-group-btn">
+                    <%= submit_tag '搜索', class: 'btn btn-default' %>
+                  </div>
                 </div>
-              </div>
-            </form>
+            <% end %>
           </div>
         </div>
       </div>
