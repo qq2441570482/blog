@@ -1,0 +1,13 @@
+<div class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      所有标签
+    </div>
+    <div class="panel-body">
+      <% @tags.each do |tag| %>
+          <%= link_to tag.name,"/welcome/tag/#{tag.id}" %>
+          <span class="badge"><%= tag.articles.count %></span><br>
+      <% end %>
+    </div>
+  </div>
+</div>

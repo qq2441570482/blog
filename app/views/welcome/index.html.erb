@@ -1,18 +1,35 @@
 <div class="main">
   <div class="container">
     <div class="row">
-      <div class="col-md-9">
-        <% @articles.each do |article| %>
-        <div class="panel">
-          <div class="panel-body" >
-            <%= link_to article.title, article_path(article), class: 'btn btn-link' %>
-          </div>
-        </div>
+      <div class="col-md-offset-1 col-md-8">
+        <% if @index_articles.count > 0 %>
+            <% @index_articles.each do |article| %>
+                <div class="panel panel-default">
+                  <div class="panel-heading" >
+                    <%= article.title %>
+                  </div>
+                  <div class="panel-body">
+                    <%= markdown(article.content[0,200]+'...') %>
+                    <%= link_to 'more', article_path(article), class: 'btn btn-warning' %>
+                  </div>
+                </div>
+            <% end %>
+        <% else %>
+            <div class="panel panel-danger" >
+                <div class="panel-heading">
+                   对不起，无相关文章记录！！
+                </div>
+                <div class="panel-body">
+                    <%= image_tag '404.png', alt: '404' %>
+                </div>
+            </div>
         <% end %>
 
       </div>
 
       <%= render 'shared/search' %>
+      <%= render 'shared/tag' %>
+      <%= render 'shared/recent' %>
 
     </div>
   </div>

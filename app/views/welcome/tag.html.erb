@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-8">
+        <% unless @tag.articles.count > 0 %>
+            <div class="panel panel-danger">
+              <div class="panel-heading">
+                对不起，当前目录下没有文章，快去新建哟！！
+              </div>
+                <div class="panel-body">
+                  <%= image_tag '404.png', alt: '404页面'  %>
+                </div>
+            </div>
+        <% else %>
+            <% @tag.articles.each do |article| %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <%= article.title %>
+                  </div>
+                  <div class="panel-body">
+                    <%= markdown(article.content[0...120]) %>
+                  </div>
+                </div>
+            <% end %>
+        <% end %>
+      </div>
+
+      <%= render 'shared/recent' %>
+
+    </div>
+  </div>
+
+</div>
