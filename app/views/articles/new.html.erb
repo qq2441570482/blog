@@ -17,7 +17,7 @@
                   <%= f.label '标签', nil, class: 'control-label' %><br>
                   <% @tags.each do |tag| %>
                       <%= f.label tag.id, tag.name, class: 'checkbox-inline' %>
-                      <%= f.check_box :tags, { :multiple => true }, tag.id,'' %>
+                      <%= f.check_box :tags, { :multiple => true }, tag.id,false %>
                   <% end %>
                 </div>
                 <div class="form-group">
