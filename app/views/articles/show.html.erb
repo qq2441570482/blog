@@ -6,10 +6,19 @@
           <% if  @article.nil? %>
             <%= image_tag '404.png' %>
           <% else %>
-              <div class="panel-heading">
-                <%= @article.title %>
-              </div>
               <div class="panel-body">
+                <div>
+                    <h2><%= @article.title %></h2>
+                </div>
+                <% if @article.tags.count > 0 %>
+                <div>
+                  标签:
+                  <% @article.tags.each do |tag| %>
+                    <%= link_to tag.name, "/welcome/tag/#{tag.id}", class: 'btn btn-info btn-xs' %>
+                  <% end %>
+                </div>
+                <% end %>
+                <hr>
                 <% if @article.content %>
                     <%= markdown(@article.content) %>
                 <% end %>
@@ -19,7 +28,9 @@
         </div>
       </div>
       <%= render 'shared/search' %>
+      <%= render 'shared/tag' %>
       <%= render 'shared/recent' %>
     </div>
+    <%= render 'shared/bottom' %>
   </div>
 </div>

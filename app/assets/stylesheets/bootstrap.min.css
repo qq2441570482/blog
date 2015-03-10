@@ -1538,11 +1538,9 @@ kbd kbd {
 }
 pre {
   display: block;
-  padding: 9.5px;
   margin: 0 0 10px;
   font-size: 13px;
   line-height: 1.42857143;
-  word-break: break-all;
   word-wrap: break-word;
   border-radius: 4px;
 }
@@ -5292,6 +5290,7 @@ a.list-group-item-danger.active:focus {
 }
 .panel-body {
   padding: 15px;
+    overflow-x: auto;
 }
 .panel-heading {
   padding: 10px 15px;

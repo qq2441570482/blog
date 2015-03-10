@@ -16,6 +16,10 @@
 
 
 body{
-    background-color: #d1cdcd;
+    background-color: #CCCCCC;
     font-family: Monaco;
+}
+
+.customer-head{
+    font-size: 20px;
 }

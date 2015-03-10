@@ -46,7 +46,6 @@
             <li><%= link_to '注销',session_path(current_user), method: :delete %></li>
         <% else %>
             <li><%= link_to '关于我',welcome_about_path %></li>
-            <li><%= link_to '登录', new_session_path %></li>
         <% end %>
       </ul>
     </div>

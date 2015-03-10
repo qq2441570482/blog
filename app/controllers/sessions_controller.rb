@@ -1,5 +1,11 @@
 class SessionsController < ApplicationController
-  before_action :new_user, only: [:new]
+
+  def new
+    unless session[:user_id].nil?
+      session.delete(:user_id)
+    end
+    @user = User.new
+  end
 
   def create
     user = User.find_by_username(params[:username])

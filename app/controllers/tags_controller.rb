@@ -1,7 +1,6 @@
 class TagsController < ApplicationController
-	def index
-		@tags = Tag.all
-	end
+  before_action :all_tags, only: [:index, :new]
+
 
 	def new
 		@tag = Tag.new
@@ -25,6 +24,9 @@ class TagsController < ApplicationController
 	private 
 	def tag_params
 		params.require(:tag).permit(:name)
-	end
+  end
 
+  def all_tags
+    @tags = Tag.all
+  end
 end
