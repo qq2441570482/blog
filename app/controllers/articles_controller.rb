@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :find_article, only: [:edit,:update,:destroy]
   before_action :new_article, only: [:new]
   before_action :all_articles, only: [:show]
-  before_action :all_tags, only: [:edit, :new, :show]
+  before_action :all_tags, only: [:edit, :new, :show, :index]
 
 
   def index

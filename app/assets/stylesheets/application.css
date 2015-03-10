@@ -23,3 +23,7 @@ body{
 .customer-head{
     font-size: 20px;
 }
+
+.customer-panel{
+    min-height: 500px;
+}
