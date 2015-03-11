@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   before_action :all_tags, only: [:index, :tag]
 
   def index
-     @index_articles = Article.all.order(created_at: :desc)
+     @index_articles = Article.all.order(created_at: :desc).page(params[:page]).per(5)
      if params[:condition].present?
      	@index_articles = @articles.where('title like ?', '%'+ params[:condition]+ '%')
      end
