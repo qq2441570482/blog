@@ -8,19 +8,19 @@
                 <thead>
                     <tr>
                       <td>标签</td>
-                      <td style="text-align: center">文章</td>
+                      <td>文章</td>
                     </tr>
                 </thead>
                 <tbody>
                 <% @tags.each do |tag|%>
-                    <% tag.articles.each do |article| %>
-                        <tr>
-                          <td><%= tag.name %></td>
-                          <td>
+                    <tr>
+                      <td><%= tag.name %></td>
+                      <% tag.articles.each do |article| %>
+                          <td style="display: list-item;list-style: none">
                             <%= link_to article.title, article_path(article), class: 'btn btn-link' %>
                           </td>
-                        </tr>
-                    <% end %>
+                      <% end %>
+                    </tr>
                 <% end %>
                 </tbody>
                 <tfoot>
