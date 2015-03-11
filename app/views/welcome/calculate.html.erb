@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="controller">
+    <div class="row">
+      <div class="col-md-offset-1 col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-body">
+              <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                      <td>标签</td>
+                      <td style="text-align: center">文章</td>
+                    </tr>
+                </thead>
+                <tbody>
+                <% @tags.each do |tag|%>
+                    <% tag.articles.each do |article| %>
+                        <tr>
+                          <td><%= tag.name %></td>
+                          <td>
+                            <%= link_to article.title, article_path(article), class: 'btn btn-link' %>
+                          </td>
+                        </tr>
+                    <% end %>
+                <% end %>
+                </tbody>
+                <tfoot>
+                    共有<label style="color: red"><%= @articles.count %></label>篇文章
+                </tfoot>
+              </table>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

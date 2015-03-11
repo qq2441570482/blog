@@ -10,6 +10,7 @@
                 <div>
                     <h2><%= @article.title %></h2>
                 </div>
+                <i class="glyphicon glyphicon-time"></i> <%= @article.created_at.strftime('%b/%d/%y') %>
                 <% if @article.tags.count > 0 %>
                 <div>
                   标签:

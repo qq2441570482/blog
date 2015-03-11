@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'welcome/about' => 'welcome#about'
 
+  get 'welcome/calculate' => 'welcome#calculate'
+
   get 'welcome/tag/:id' => 'welcome#tag'
 
   resources :articles
