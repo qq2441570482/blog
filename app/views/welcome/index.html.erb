@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row customer-panel">
       <div class="col-md-9">
-        <% if @index_articles.nil? && @index_articles.count > 0 %>
+        <% if  @index_articles.count > 0 %>
             <% @index_articles.each_with_index  do |article,index| %>
                 <div class="panel panel-default ">
                   <div class="panel-body">
