@@ -4,9 +4,11 @@
       所有标签
     </div>
     <div class="panel-body">
+      <% unless @tags.nil? %>
       <% @tags.each do |tag| %>
           <%= link_to tag.name,"/welcome/tag/#{tag.id}" %>
           <span class="badge"><%= tag.articles.count %></span><br>
+      <% end %>
       <% end %>
     </div>
   </div>
