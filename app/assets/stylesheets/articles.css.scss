@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "font-awesome-sprockets";
-@import "font-awesome";
 
 .main{
   padding: 80px 0
@@ -26,6 +24,14 @@
 
 .checkboxcustome{
   margin-right: 10px;
+}
+
+.paneltags{
+  min-height: 150px;
+}
+
+.panelrecent{
+  min-height: 250px;
 }
 
 

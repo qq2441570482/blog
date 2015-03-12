@@ -10,7 +10,7 @@
                 <div>
                     <h2><%= @article.title %></h2>
                 </div>
-                <i class="glyphicon glyphicon-time"></i> <%= @article.created_at.strftime('%b/%d/%y') %>
+                发表于:<%= @article.created_at.strftime('%Y年%m月%d日') %>
                 <% if @article.tags.count > 0 %>
                 <div>
                   标签:
