@@ -20,11 +20,12 @@ module Blog
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.action_dispatch.default_headers = {
-        'X-Frame-Options' => 'ALLOWALL'
-    }
+
 
   end
+  config.action_dispatch.default_headers = {
+      'X-Frame-Options' => 'ALLOWALL'
+  }
 end
 
 
