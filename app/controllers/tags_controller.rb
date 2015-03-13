@@ -1,7 +1,6 @@
 class TagsController < ApplicationController
   before_action :all_tags, only: [:index, :new]
 
-
 	def new
 		@tag = Tag.new
 	end

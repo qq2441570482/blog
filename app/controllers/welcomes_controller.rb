@@ -1,4 +1,4 @@
-class WelcomeController < ApplicationController
+class WelcomesController < ApplicationController
   before_action :all_articles, only: [:index,:tag, :calculate]
   before_action :all_tags, only: [:index, :tag, :calculate]
 
@@ -10,7 +10,6 @@ class WelcomeController < ApplicationController
   end
 
   def about
-
   end
 
   def tag
@@ -19,7 +18,6 @@ class WelcomeController < ApplicationController
 
 
   def calculate
-
   end
 
   private

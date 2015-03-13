@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  post 'welcome/index' => 'welcome#index'
+  root 'welcomes#index'
 
-  get 'welcome/about' => 'welcome#about'
+  get 'welcomes/tag/:id' => 'welcomes#tag'
 
-  get 'welcome/calculate' => 'welcome#calculate'
-
-  get 'welcome/tag/:id' => 'welcome#tag'
+  resources :welcomes, only: [] do
+    get 'about', on: :collection
+    post 'index', on: :collection
+    get 'calculate', on: :collection
+  end
 
   resources :articles
 
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # root 'welcomes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

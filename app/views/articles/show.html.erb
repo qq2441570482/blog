@@ -15,7 +15,7 @@
                 <div>
                   标签:
                   <% @article.tags.each do |tag| %>
-                    <%= link_to tag.name, "/welcome/tag/#{tag.id}", class: 'btn btn-info btn-xs' %>
+                    <%= link_to tag.name, "/welcomes/tag/#{tag.id}", class: 'btn btn-info btn-xs' %>
                   <% end %>
                 </div>
                 <% end %>
