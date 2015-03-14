@@ -77,3 +77,7 @@
 <b>blog 3.1</b>
 - 修改了一些bug，对某些controller做了filter
 - 增加了几个gitignore文件
+
+<b>blog 3.2</b>
+- 重构了session的注入和销毁的问题，在helper中写方法有什么区别？
+- 增加了对于controller_tags的测试，解决了怎样在rspec中注入login

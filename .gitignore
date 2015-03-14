@@ -14,7 +14,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-.idea/
+.idea/*
 .idea/workspace.xml
-/coverage/.last_run.json
-/coverage/.resultset.json
+coverage/*

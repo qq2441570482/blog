@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  include SessionsHelper
+
   def new
     unless session[:user_id].nil?
       session.delete(:user_id)
@@ -10,7 +12,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+      sign_in(user)
       redirect_to articles_path
     else
       render :new
@@ -18,7 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session.delete(:user_id)
+    log_out
     redirect_to root_path
   end
 
