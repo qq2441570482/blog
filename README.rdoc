@@ -72,3 +72,8 @@
 <b>blog 3.0</b>
 - 增加了测试代码覆盖率的gem，SimpleCov
 - 完成了WelcomesController 的测试
+
+
+<b>blog 3.1</b>
+- 修改了一些bug，对某些controller做了filter
+- 增加了几个gitignore文件

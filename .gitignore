@@ -16,3 +16,5 @@
 /tmp
 .idea/
 .idea/workspace.xml
+/coverage/.last_run.json
+/coverage/.resultset.json

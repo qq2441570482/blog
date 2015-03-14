@@ -2,6 +2,8 @@ class WelcomesController < ApplicationController
   before_action :all_articles, only: [:index,:tag, :calculate]
   before_action :all_tags, only: [:index, :tag, :calculate]
 
+  before_action :require_login, only: [:calculate]
+
   def index
      @index_articles = Article.all.order(created_at: :desc).page(params[:page]).per(5)
      if params[:condition].present?

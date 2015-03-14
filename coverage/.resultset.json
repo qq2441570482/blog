@@ -384,8 +384,8 @@
         1,
         null,
         1,
-        0,
-        0,
+        2,
+        2,
         null,
         null,
         null
@@ -481,10 +481,19 @@
         null,
         1,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/twer/rails_test/blog/app/controllers/tags_controller.rb": [
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -560,6 +569,8 @@
       "/Users/twer/rails_test/blog/app/controllers/welcomes_controller.rb": [
         1,
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -647,6 +658,6 @@
         null
       ]
     },
-    "timestamp": 1426309382
+    "timestamp": 1426322707
   }
 }
