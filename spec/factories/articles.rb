@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :article do
-    title 'it is just a test'
-    content 'hello world'
+    title 'hello'
+    content 'world'
   end
+
 end

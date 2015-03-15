@@ -81,3 +81,6 @@
 <b>blog 3.2</b>
 - 重构了session的注入和销毁的问题，在helper中写方法有什么区别？
 - 增加了对于controller_tags的测试，解决了怎样在rspec中注入login
+
+<b>blog 3.3</b>
+- 增加了对于controller_articles的测试

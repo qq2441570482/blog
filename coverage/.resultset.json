@@ -1,46 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/twer/rails_test/blog/spec/controllers/tags_controller_spec.rb": [
+      "/Users/twer/rails_test/blog/spec/models/tag_spec.rb": [
         1,
         null,
         1,
-        null,
-        1,
-        null,
-        1,
-        4,
-        4,
-        null,
-        null,
         1,
         1,
         1,
         1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         null,
         null
@@ -259,19 +227,12 @@
         null,
         null
       ],
-      "/Users/twer/rails_test/blog/spec/factories/article_tags.rb": [
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
       "/Users/twer/rails_test/blog/spec/factories/articles.rb": [
         1,
         1,
         1,
         1,
+        null,
         null,
         null
       ],
@@ -403,7 +364,7 @@
         1,
         null,
         1,
-        4,
+        0,
         null,
         null,
         null,
@@ -421,63 +382,6 @@
         1,
         null
       ],
-      "/Users/twer/rails_test/blog/app/controllers/tags_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        0,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
-      "/Users/twer/rails_test/blog/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        4,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/twer/rails_test/blog/app/models/user.rb": [
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
       "/Users/twer/rails_test/blog/app/models/tag.rb": [
         1,
         null,
@@ -486,17 +390,8 @@
         null,
         null,
         null
-      ],
-      "/Users/twer/rails_test/blog/app/models/article_tag.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1426350528
+    "timestamp": 1426391275
   }
 }
