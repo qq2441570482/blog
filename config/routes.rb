@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcomes#index'
+  root to: 'welcomes#index'
 
-  get 'welcomes/tag/:id' => 'welcomes#tag'
+  get 'welcomes/tag/:id' => 'welcomes#tag', :as => 'welcome_tag'
 
   resources :welcomes, only: [] do
     get 'about', on: :collection
@@ -11,9 +11,11 @@ Rails.application.routes.draw do
 
   resources :articles
 
-  resources :sessions , only: [:new,:create,:destroy]
+  resources :sessions , only: [:create, :destroy]
 
-  resources :tags
+  get '/signin' => 'sessions#new'
+
+  resources :tags, only: [:index, :create, :new, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
