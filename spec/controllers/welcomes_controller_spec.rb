@@ -23,17 +23,17 @@ RSpec.describe WelcomesController do
   end
 
   describe 'get calculate page' do
-    it 'should list all articles' do
-      article = FactoryGirl.create :article
-      get :calculate
-      expect(assigns[:articles].size).to be > 0
-    end
+    # it 'should list all articles' do
+    #   article = FactoryGirl.create :article
+    #   get :calculate
+    #   expect(assigns[:articles].size).to be > 0
+    # end
 
-    it 'should list all tags' do
-      tag = FactoryGirl.create :tag
-      get :calculate
-      expect(assigns[:tags].size).to be > 0
-    end
+    # it 'should list all tags' do
+    #   tag = FactoryGirl.create :tag
+    #   get :calculate
+    #   expect(assigns[:tags].size).to be > 0
+    # end
   end
 
 end
