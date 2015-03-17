@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def require_login
     unless session[:user_id]
-      redirect_to new_session_path
+      redirect_to signin_path
     end
   end
 end
