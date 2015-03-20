@@ -19,7 +19,12 @@ class TagsController < ApplicationController
 		@tag = Tag.find(params[:id])
 		@tag.destroy
 		redirect_to tags_path
-	end
+  end
+
+  def destroy_multiple
+    Tag.destroy(params[:tag_ids]) unless params[:tag_ids].nil?
+    redirect_to tags_path
+  end
 
 
 	private 
