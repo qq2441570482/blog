@@ -13,7 +13,7 @@
                     <%= link_to 'more', article_path(article), class: 'btn btn-warning' %>
                   </div>
                   <% if (index+1) % 5 == 0 || index == @index_articles.count-1  %>
-                  <div class="panel-footer">
+                  <div class="panel-footer cutomer-footer ">
                       <%= paginate @index_articles %>
                   </div>
                   <% end %>
@@ -34,9 +34,6 @@
       <%= render 'shared/search' %>
       <%= render 'shared/tag' %>
       <%= render 'shared/recent' %>
-    </div>
-    <div class="row">
-        <%= paginate @index_articles %>
     </div>
     <%= render 'shared/bottom' %>
 
