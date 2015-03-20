@@ -381,6 +381,54 @@
         1,
         null
       ],
+      "/Users/twer/rails_test/blog/db/schema.rb": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
       "/Users/twer/rails_test/blog/app/controllers/application_controller.rb": [
         1,
         null,
@@ -767,6 +815,6 @@
         null
       ]
     },
-    "timestamp": 1426560523
+    "timestamp": 1426815859
   }
 }

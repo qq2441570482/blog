@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <div class="panel panel-default">
+        <div class="panel panel-info">
           <% if  @article.nil? %>
             <%= image_tag '404.png' %>
           <% else %>
@@ -24,8 +24,24 @@
                     <%= markdown(@article.content) %>
                 <% end %>
               </div>
+              <div class="panel-footer">
+                  <!--兼容版，可保证页面完全兼容-->
+                  <div id="SOHUCS" sid= "<%= @article.id %>"></div>
+                  <script>
+                      (function(){
+                          var appid = 'cyrGl2I4O',
+                                  conf = 'prod_76dcdc4e5f778b841e78a35b938c555c';
+                          var doc = document,
+                                  s = doc.createElement('script'),
+                                  h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+                          s.type = 'text/javascript';
+                          s.charset = 'utf-8';
+                          s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+                          h.insertBefore(s,h.firstChild);
+                      })()
+                  </script>
+              </div>
           <% end %>
-
         </div>
       </div>
       <%= render 'shared/search' %>
