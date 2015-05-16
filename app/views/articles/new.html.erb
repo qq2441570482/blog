@@ -31,9 +31,39 @@
             <% end %>
           </div>
         </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">日期</div>
+          <div class="panel-body">
+            <div class="form-group">
+              <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <%= f.text_field :created_at, class: 'date-pick' %>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+              </div>
+              <input type="hidden" id="dtp_input2" value="" /><br/>
+            </div>  
+           </div>
+          </div>
         <% end %>
+        </div>
       </div>
     </div>
     <%= render 'shared/bottom' %>
   </div>
 </div>
+<script type="text/javascript">
+   $('.form_date').datetimepicker({
+        format: 'yyyy-mm-dd',
+        language:  'zh-CN',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+    });
+</script>

@@ -39,7 +39,6 @@ gem 'redcarpet'
 
 gem 'pygments.rb'
 
-gem 'font-awesome-sass'
 
 gem 'kaminari'
 
