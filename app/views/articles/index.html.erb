@@ -34,6 +34,13 @@
               </tbody>
             </table>
           </div>
+            <%  @articles.each_index do |index|%>
+            <% if (index + 1) % 5 == 0 || index == @articles.count-1 %>
+                <div class="panel-footer cutomer-footer">
+                    <%= paginate @articles %>
+                </div>
+            <% end %>
+            <% end %>
         </div>
       </div>
       <%= render 'shared/search' %>
