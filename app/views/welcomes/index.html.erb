@@ -6,10 +6,10 @@
             <% @index_articles.each_with_index  do |article,index| %>
                 <div class="panel panel-default ">
                   <div class="panel-body">
-                    <h3><%= article.title %></h3>
+                    <h3><%= link_to article.title, article_path(article) %></h3>
                     <span class="glyphicon glyphicon-time" aria-hidden="true"></span><%= article.created_at.strftime(':%Y年%m月%d日') %>
                     <hr>
-                    <%= markdown(article.content[0,200]+'...') %>
+                    <%= markdown(article.content[0,400]+'...') %>
                     <%= link_to 'more', article_path(article), class: 'btn btn-warning' %>
                   </div>
                   <% if (index+1) % 5 == 0 || index == @index_articles.count-1  %>
