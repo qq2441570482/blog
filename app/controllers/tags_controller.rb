@@ -3,6 +3,10 @@ class TagsController < ApplicationController
 
   before_action :require_login
 
+	def index
+		@count = Tag.all.count
+	end
+
 	def new
 		@tag = Tag.new
 	end
@@ -33,6 +37,6 @@ class TagsController < ApplicationController
   end
 
   def all_tags
-    @tags = Tag.all.(created_at: :desc).page(params[:page]).per(5);
+		@tags = Tag.all.order(created_at: :desc).page(params[:page]).per(8)
   end
 end

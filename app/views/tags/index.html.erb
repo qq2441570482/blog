@@ -45,12 +45,10 @@
              <% end %>
           </div>
 
-          <%  @tags.each_index do |index|%>
-              <% if (index + 1) % 5 == 0 || index == @tags.count-1 %>
-                  <div class="panel-footer cutomer-footer">
-                    <%= paginate @tags %>
-                  </div>
-              <% end %>
+          <% if @count > 8 %>
+          <div class="panel-footer cutomer-footer">
+            <%= paginate @tags %>
+          </div>
           <% end %>
         </div>
       </div>

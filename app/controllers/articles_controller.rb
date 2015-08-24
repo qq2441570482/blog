@@ -7,7 +7,8 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.all.order(created_at: :desc).page(params[:page]).per(7)
+    @articles = Article.all.order(created_at: :desc).page(params[:page]).per(8)
+    @counts = Article.all.count
   end
 
   def show
