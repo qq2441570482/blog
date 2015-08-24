@@ -1,5 +1,5 @@
 class WelcomesController < ApplicationController
-  before_action :all_articles, only: [:index,:tag, :calculate]
+  before_action :all_articles, only: [:index,:tag]
   before_action :all_tags, only: [:index, :tag, :calculate]
 
   before_action :require_login, only: [:calculate]
@@ -20,6 +20,7 @@ class WelcomesController < ApplicationController
 
 
   def calculate
+    @articles = Article.all
   end
 
   private

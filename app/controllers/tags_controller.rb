@@ -33,6 +33,6 @@ class TagsController < ApplicationController
   end
 
   def all_tags
-    @tags = Tag.all
+    @tags = Tag.all.(created_at: :desc).page(params[:page]).per(5);
   end
 end
