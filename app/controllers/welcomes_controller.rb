@@ -29,6 +29,6 @@ class WelcomesController < ApplicationController
   end
 
   def all_tags
-    @tags = Tag.all
+    @tags = Tag.all.sort{|tag| tag.articles.count}
   end
 end
