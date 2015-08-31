@@ -4,11 +4,14 @@
       .col-md-9
         .panel.customer-panel
           .panel-body
-            .ul
-              - @articles.sort.reverse.each do |month, posts|
-                .li
-                  = month.strftime('%Y年%m月')
-                .ul.list-group
-                - posts.reverse.each do |post|
-                  .li.list-group-item
-                    = post.title
+            .panel
+              .panel-body
+                - @articles.sort.reverse.each do |month, posts|
+                  %h4
+                    = month.strftime('%Y年%m月')
+                  %ul.list-group
+                  - posts.reverse.each do |post|
+                    %li.list-group-item
+                      =post.created_at.strftime('%Y年%m月%d日') + '     ---->     '
+                      =link_to(post.title, article_path(post))
+                  %br
