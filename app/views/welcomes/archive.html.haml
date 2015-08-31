@@ -9,6 +9,6 @@
                 .li
                   = month.strftime('%Y年%m月')
                 .ul.list-group
-                - posts.each do |post|
+                - posts.reverse.each do |post|
                   .li.list-group-item
                     = post.title
