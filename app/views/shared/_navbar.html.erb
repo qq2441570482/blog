@@ -36,6 +36,7 @@
             <li><%= link_to '注销', session_path(current_user), method: :delete %></li>
         <% else %>
             <li><%= link_to '目录', archive_welcomes_path %></li>
+            <li><%= link_to '标签', tags_welcomes_path %></li>
             <li><%= link_to '关于我', about_welcomes_path %></li>
         <% end %>
       </ul>

@@ -22,6 +22,10 @@ class WelcomesController < ApplicationController
     @tag = Tag.exists?(params[:id]) ? Tag.find(params[:id]) : nil
   end
 
+  def tags
+    @tags = Tag.all.sort_by {|tag| -tag.articles.count}
+  end
+
 
   def calculate
     @articles = Article.all

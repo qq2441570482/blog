@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     post 'index', on: :collection
     get 'calculate', on: :collection
     get 'archive', on: :collection
+    get 'tags', on: :collection
   end
 
   resources :articles
