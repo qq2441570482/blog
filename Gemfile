@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pry-rails'
 
+gem 'haml-rails'
+
 gem 'redcarpet'
 
 gem 'pygments.rb'

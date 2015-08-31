@@ -1,0 +1,14 @@
+.main
+  .container
+    .row
+      .col-md-9
+        .panel.customer-panel
+          .panel-body
+            .ul
+              - @articles.sort.reverse.each do |month, posts|
+                .li
+                  = month.strftime('%Y年%m月')
+                .ul.list-group
+                - posts.each do |post|
+                  .li.list-group-item
+                    = post.title

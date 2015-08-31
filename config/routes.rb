@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'about', on: :collection
     post 'index', on: :collection
     get 'calculate', on: :collection
+    get 'archive', on: :collection
   end
 
   resources :articles

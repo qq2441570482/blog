@@ -1,6 +1,6 @@
 class WelcomesController < ApplicationController
-  before_action :all_articles, only: [:index,:tag]
-  before_action :all_tags, only: [:index, :tag, :calculate]
+  before_action :all_articles, only: [:index,:tag, :archive]
+  before_action :all_tags, only: [:index, :tag, :calculate, :archive]
 
   before_action :require_login, only: [:calculate]
 
@@ -9,6 +9,10 @@ class WelcomesController < ApplicationController
      if params[:condition].present?
      	@index_articles = @index_articles.where('title like ?', '%'+ params[:condition]+ '%')
      end
+  end
+
+  def archive
+    @articles = Article.all.group_by{|m| m.created_at.beginning_of_month}
   end
 
   def about
