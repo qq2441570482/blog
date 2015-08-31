@@ -1,0 +1,16 @@
+.main
+  .controller
+    .row
+      .col-md-offset-4.col-md-3
+        .panel.panel-default
+          .panel-body
+            = form_tag sessions_path, class: 'form-horizontal' do
+              .form-group
+                .col-md-12
+                  = text_field_tag :username, nil, placeholder: '请输入用户名', class: 'form-control'
+              .form-group
+                .col-md-12
+                  = password_field_tag :password, nil, placeholder: '请输入密码', class: 'form-control'
+              .form-group
+                .col-md-12
+                  = submit_tag '登录', class: 'btn btn-danger btn-block'

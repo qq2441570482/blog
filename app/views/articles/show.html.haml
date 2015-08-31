@@ -1,0 +1,42 @@
+.main
+  .container
+    .row
+      .col-md-9
+        .panel.panel-info
+          - if  @article.nil?
+            = image_tag '404.png'
+          - else
+            .panel-body
+              %div
+                %h2= @article.title
+                发表于:
+                = @article.created_at.strftime('%Y年%m月%d日')
+              - if @article.tags.count > 0
+                %div
+                  标签:
+                  - @article.tags.each do |tag|
+                    = link_to tag.name, "/welcomes/tag/#{tag.id}", class: 'btn btn-info btn-xs'
+              %hr
+              - if @article.content
+                = markdown(@article.content)
+            .panel-footer
+              <div id="SOHUCS" sid= "<%= @article.id %>"></div>
+      = render 'shared/search'
+      = render 'shared/tag'
+      = render 'shared/recent'
+    = render 'shared/bottom'
+
+:javascript
+  (function(){
+    var appid = 'cyrGl2I4O',
+    conf = 'prod_76dcdc4e5f778b841e78a35b938c555c';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    })()
+
+
