@@ -8,9 +8,8 @@
               .panel-body
                 - @tags.each do |tag|
                   %button.btn.btn-sm.btn-primary
-                    =tag.name
-                    %span.badge
-                      =tag.articles.count
+                    = tag.name
+                    %span.badge= tag.articles.count
                   %ul.list-group
                   - tag.articles.each do |article|
                     %li.list-group-item.customer-item
