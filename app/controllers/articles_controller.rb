@@ -66,11 +66,11 @@ class ArticlesController < ApplicationController
   end
 
   def all_articles
-    @articles = Article.all.order(created_at: :desc)
+    @articles = Article.all.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def all_tags
-    @tags = Tag.all
+    @tags = Tag.all.sort_by {|tag| -tag.articles.count}
   end
 
 end
