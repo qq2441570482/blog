@@ -20,7 +20,7 @@
               - if @article.content
                 = markdown(@article.content)
             .panel-footer
-              <div id="SOHUCS" sid= "<%= @article.id %>"></div>
+              #SOHUCS{:sid => @article.id}
       = render 'shared/search'
       = render 'shared/tag'
       = render 'shared/recent'

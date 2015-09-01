@@ -1,0 +1,28 @@
+.main
+  .container
+    .row
+      = form_for @article do |f|
+        .col-md-9
+          .panel
+            .panel-body
+              .form-group
+                = f.label '标题',nil, class: 'control-label'
+                = f.text_field :title, class: 'form-control'
+              .form-group
+                = f.label '正文', nil, class: 'control-label'
+                = f.text_area :content, class: 'form-control', rows: 20
+              .form-group
+                = f.submit '提交', class: 'btn btn-default'
+        .col-md-3
+          .panel.panel-default
+            .panel-heading 标签
+            .panel-body
+              - @tags.each do |tag|
+                .form-group
+                  - if @article.tags.exists?(tag.id)
+                    = f.check_box :tags, { :multiple => true, :checked => true }, tag.id, false
+                  - else
+                    = f.check_box :tags, { :multiple => true, }, tag.id, false
+                  = f.label tag.id, tag.name, class: 'checkbox-inline'
+    = render 'shared/bottom'
+
