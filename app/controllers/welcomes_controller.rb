@@ -16,6 +16,10 @@ class WelcomesController < ApplicationController
   def about
   end
 
+  def relax
+
+  end
+
   def tag
     @tag = Tag.exists?(params[:id]) ? Tag.find(params[:id]) : nil
   end

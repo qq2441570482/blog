@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'welcomes/tag/:id' => 'welcomes#tag', :as => 'welcome_tag'
 
+  get '/relax' => 'welcomes#relax'
+
   resources :welcomes, only: [] do
     get 'about', on: :collection
     post 'index', on: :collection
