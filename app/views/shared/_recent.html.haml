@@ -1,0 +1,12 @@
+.col-md-3
+  .panel.panel-default.panelrecent
+    .panel-heading
+      近期文章
+    .panel-body
+      %table.table.table-bordered.table-hover
+        %tbody
+          - unless @articles.nil?
+            - @articles.each do |article|
+              %tr
+                %td
+                  = link_to article.title, article_path(article)

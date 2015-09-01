@@ -1,0 +1,11 @@
+.col-md-3
+  .panel.panel-default.paneltags
+    .panel-heading
+      所有标签
+    .panel-body
+      - unless @tags.nil?
+        - @tags.each do |tag|
+          = link_to tag.name, welcome_tag_path(tag)
+          %span.badge
+            = tag.articles.count
+          %br

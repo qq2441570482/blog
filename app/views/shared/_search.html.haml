@@ -1,0 +1,8 @@
+.col-md-3
+  .panel.panel-default
+    .panel-body
+      = form_tag welcomes_path do
+        .input-group
+          = text_field_tag :condition, nil, class: 'form-control'
+          .input-group-btn
+            = submit_tag '搜索',  class: 'btn btn-default'
