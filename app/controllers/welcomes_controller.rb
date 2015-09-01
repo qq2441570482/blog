@@ -1,8 +1,6 @@
 class WelcomesController < ApplicationController
   before_action :all_articles, only: [:index,:tag, :archive]
-  before_action :all_tags, only: [:index, :tag, :calculate, :archive]
-
-  before_action :require_login, only: [:calculate]
+  before_action :all_tags, only: [:index, :tag, :archive]
 
   def index
      @index_articles = Article.all.order(created_at: :desc).page(params[:page]).per(5)
@@ -24,11 +22,6 @@ class WelcomesController < ApplicationController
 
   def tags
     @tags = Tag.all.sort_by {|tag| -tag.articles.count}
-  end
-
-
-  def calculate
-    @articles = Article.all
   end
 
   private

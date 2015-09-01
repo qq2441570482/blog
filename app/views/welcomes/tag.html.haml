@@ -1,0 +1,30 @@
+.main
+  .container
+    .row
+      .col-md-9.customer-panel
+        - if @tag.nil? || @tag.articles.count <= 0
+          .panel.panel-danger.customer-panel
+            .panel-heading
+              对不起，您所搜素的页面已经飞到外太空了！！
+            .panel-body
+              = image_tag '404.png', alt: '404页面'
+        - else
+          .panel.panel-default.customer-panel
+            .panel-heading
+              = @tag.name
+              标签下共有
+              %font{color: 'red'}
+                = @tag.articles.count
+              篇文章
+            .panel-body
+              %table.table.table-hover
+                - @tag.articles.each do |article|
+                  %tr
+                    %th
+                      = link_to article.title, article_path(article), class: 'btn btn-link'
+                    %th
+                      = article.created_at.strftime('%Y-%m-%d')
+      = render 'shared/search'
+      = render 'shared/tag'
+      = render 'shared/recent'
+    = render 'shared/bottom'
