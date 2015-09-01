@@ -1,5 +1,5 @@
 class WelcomesController < ApplicationController
-  before_action :all_articles, only: [:index,:tag, :archive]
+  before_action :all_articles, only: [:index,:tag, :archive, :tags]
   before_action :all_tags, only: [:index, :tag, :archive]
 
   def index
