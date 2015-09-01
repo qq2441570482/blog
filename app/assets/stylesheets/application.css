@@ -27,3 +27,11 @@ body{
 .customer-panel{
     min-height: 550px;
 }
+
+:before{
+    margin-right: -10px;
+}
+
+.bottomDiv a{
+    margin-left: -15px;
+}
