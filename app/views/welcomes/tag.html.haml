@@ -18,7 +18,7 @@
               篇文章
             .panel-body
               %table.table.table-hover
-                - @tag.articles.each do |article|
+                - @tag.articles.order(created_at: :desc).each do |article|
                   %tr
                     %th
                       = link_to article.title, article_path(article), class: 'btn btn-link'
