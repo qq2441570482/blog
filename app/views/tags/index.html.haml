@@ -28,8 +28,8 @@
 
 :javascript
   $('#checkall').click(function() {
-    var checkbox = $(this)[0];
+    var checkbox = $(this);
     $('tbody :checkbox').each(function() {
-      $(this)[0].checked = checkbox.checked;
+      $(this).prop('checked', checkbox.is(':checked'));
     });
   });
