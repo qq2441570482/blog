@@ -19,6 +19,12 @@
               %hr
               - if @article.content
                 = markdown(@article.content)
+              %hr
+              - unless @previousArticle.nil?
+                = link_to '上一篇', article_path(@previousArticle), class: 'btn btn-sm btn-link'
+              - unless @nextArticle.nil?
+                = link_to '下一篇', article_path(@nextArticle), class: 'btn btn-sm btn-link pull-right'
+
             .panel-footer
               #SOHUCS{:sid => @article.id}
       = render 'shared/search'

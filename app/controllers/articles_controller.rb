@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :require_login, only: [:index,:new,:create,:edit]
-  before_action :find_article, only: [:edit,:update,:destroy]
+  before_action :require_login, only: [:index, :new, :create, :edit]
+  before_action :find_article, only: [:edit, :update, :destroy]
   before_action :new_article, only: [:new]
   before_action :all_articles, only: [:show]
   before_action :all_tags, only: [:edit, :new, :show, :index]
@@ -13,15 +13,20 @@ class ArticlesController < ApplicationController
 
   def show
     Article.exists?(params[:id]) ? @article = Article.find(params[:id]) : @article = nil
-  end
 
+    index = find_index(params[:id])
+
+    @previousArticle = Article.all.order(created_at: :desc)[index - 1] if index != 0
+    @nextArticle = Article.all.order(created_at: :desc)[index + 1] if index != (Article.count -1)
+
+  end
 
   def create
     article = Article.new(article_params)
     if article.save
       unless params[:article][:tags].nil?
         params[:article][:tags].each do |article_tag|
-            ArticleTag.create(article_id: article.id, tag_id: article_tag.to_i )
+          ArticleTag.create(article_id: article.id, tag_id: article_tag.to_i)
         end
       end
       redirect_to articles_path
@@ -38,7 +43,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       unless params[:article][:tags].nil?
         params[:article][:tags].each do |article_tag|
-          ArticleTag.create(article_id: params[:id], tag_id: article_tag.to_i )
+          ArticleTag.create(article_id: params[:id], tag_id: article_tag.to_i)
         end
       end
       redirect_to articles_path
@@ -70,7 +75,15 @@ class ArticlesController < ApplicationController
   end
 
   def all_tags
-    @tags = Tag.all.sort_by {|tag| -tag.articles.count}
+    @tags = Tag.all.sort_by { |tag| -tag.articles.count }
+  end
+
+  def find_index(id)
+    Article.all.order(created_at: :desc).each_with_index do |article, index|
+      if (article.id == id.to_i)
+        return index
+      end
+    end
   end
 
 end
