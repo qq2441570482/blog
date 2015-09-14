@@ -6,7 +6,7 @@
           .panel-body
             .panel
               .panel-body
-                - @articles.sort.reverse.each do |month, posts|
+                - @articles.each do |month, posts|
                   %h4= month.strftime('%Y年%m月')
                   %ul.list-group
                   - posts.each do |post|

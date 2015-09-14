@@ -10,7 +10,7 @@ class WelcomesController < ApplicationController
   end
 
   def archive
-    @articles = Article.all.group_by{|m| m.created_at.beginning_of_month}
+    @articles = Article.all.order(created_at: :desc).group_by{|m| m.created_at.beginning_of_month}
   end
 
   def about
