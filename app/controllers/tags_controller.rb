@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   before_action :all_tags, only: [:index, :new]
-
+	before_action :all_articles, only: [:index]
   before_action :require_login
 
 	def index
@@ -38,5 +38,9 @@ class TagsController < ApplicationController
 
   def all_tags
 		@tags = Tag.all.order(created_at: :desc).page(params[:page]).per(8)
-  end
+	end
+
+	def all_articles
+		@articles = Article.all.order(created_at: :desc).page(params[:page]).per(10)
+	end
 end

@@ -17,9 +17,13 @@
                 = render @tags
                 %input(type="checkbox" id="checkall" value="全选")
                 = submit_tag '删除全部', class: 'btn btn-sm btn-link'
-        - if @count > 8
-          .panel-footer.cutomer-footer
-            =paginate @tags
+          - if @count > 8
+            .panel-footer.cutomer-footer
+              =paginate @tags
+      = render 'shared/search'
+      = render 'shared/recent'
+    = render 'shared/bottom'
+
 
 :javascript
   $('#checkall').click(function() {
