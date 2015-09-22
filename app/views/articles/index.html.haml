@@ -12,12 +12,7 @@
                   %th 修改
                   %th 删除
               %tbody
-                - @articles.each do |article|
-                  %tr
-                    %td= article.id
-                    %td= link_to article.title, article_path(article)
-                    %td= link_to '修改', edit_article_path(article), class: 'btn btn-sm btn-primary'
-                    %td= link_to '删除', article_path(article), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: '你确定要删除吗？'}
+                = render @articles
           - if @counts > 8
             .panel-footer.cutomer-footer
               = paginate @articles

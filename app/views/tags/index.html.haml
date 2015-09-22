@@ -14,12 +14,7 @@
                   %th 内容
                   %th 删除
               %tbody
-                - @tags.each do |tag|
-                  %tr
-                    %td= check_box_tag 'tag_ids[]', tag.id
-                    %td= tag.id
-                    %td= tag.name
-                    %td= link_to '删除',tag_path(tag), method: :delete, data:{confirm: "你确定要删除'#{tag.name}'标签吗？"}, class: 'btn btn-sm btn-danger'
+                = render @tags
                 %input(type="checkbox" id="checkall" value="全选")
                 = submit_tag '删除全部', class: 'btn btn-sm btn-link'
         - if @count > 8
