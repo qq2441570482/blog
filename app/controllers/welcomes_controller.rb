@@ -28,6 +28,13 @@ class WelcomesController < ApplicationController
     @tags = Tag.all.sort_by {|tag| -tag.articles.count}
   end
 
+  def rss
+    @articles = Article.all.order(created_at: :desc)
+    respond_to do |format|
+      format.json {render :json => @articles}
+    end
+  end
+
   private
   def all_articles
     @articles = Article.all.order(created_at: :desc).limit(10)

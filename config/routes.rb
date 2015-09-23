@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get '/relax' => 'welcomes#relax'
 
+  get '/rss' => 'welcomes#rss', defaults: {format: 'json'}
+
   resources :welcomes, only: [] do
     get 'about', on: :collection
     post 'index', on: :collection
