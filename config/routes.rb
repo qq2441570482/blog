@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get '/rss' => 'welcomes#rss', defaults: {format: 'json'}
 
+  get 'articles/new_use_json'
+
+  post 'articles/create_all'
+
   resources :welcomes, only: [] do
     get 'about', on: :collection
     post 'index', on: :collection

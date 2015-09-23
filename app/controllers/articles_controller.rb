@@ -25,6 +25,18 @@ class ArticlesController < ApplicationController
 
   end
 
+  def new_use_json
+
+  end
+
+  def create_all
+    articles = ActiveSupport::JSON.decode(params[:articles])
+    articles.each do |article|
+      Article.create(title: article['title'], content: article['content'], created_at: article['created_at'], updated_at: article['updated_at'] )
+    end
+    redirect_to articles_path
+  end
+
   def create
     article = Article.new(article_params)
     if article.save
