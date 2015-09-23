@@ -30,9 +30,6 @@ class WelcomesController < ApplicationController
 
   def rss
     @articles = Article.all.order(created_at: :desc)
-    respond_to do |format|
-      format.json {render :json => @articles}
-    end
   end
 
   private
