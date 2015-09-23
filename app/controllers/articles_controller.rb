@@ -5,6 +5,8 @@ class ArticlesController < ApplicationController
   before_action :all_articles, only: [:show]
   before_action :all_tags, only: [:edit, :new, :show, :index]
 
+  respond_to :html, :json, only: [:show]
+
 
   def index
     @articles = Article.all.order(created_at: :desc).page(params[:page]).per(8)
@@ -18,6 +20,8 @@ class ArticlesController < ApplicationController
 
     @previousArticle = Article.all.order(created_at: :desc)[index - 1] if index != 0
     @nextArticle = Article.all.order(created_at: :desc)[index + 1] if index != (Article.count -1)
+
+    respond_with(@article)
 
   end
 
