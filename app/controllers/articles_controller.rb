@@ -32,7 +32,11 @@ class ArticlesController < ApplicationController
   def create_all
     articles = ActiveSupport::JSON.decode(params[:articles])
     articles.each do |article|
-      Article.create(title: article['title'], content: article['content'], created_at: article['created_at'], updated_at: article['updated_at'] )
+      newArticle = Article.create(title: article['title'], content: article['content'], created_at: article['created_at'], updated_at: article['updated_at'])
+      unless article['tag'].nil?
+        tag = Tag.find_or_create_by(name: article['tag'])
+        ArticleTag.create(article_id: newArticle.id, tag_id: tag.id)
+      end
     end
     redirect_to articles_path
   end
