@@ -48,10 +48,12 @@ gem 'kaminari'
 
 gem 'rspec-rails'
 
-gem "factory_girl_rails", "~> 4.0"
+gem 'factory_girl_rails', '~> 4.0'
 
 
 gem 'simplecov'
+
+gem 'font-awesome-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 

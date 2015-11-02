@@ -1,72 +1,60 @@
 .main
   .container
     .row
-      .col-md-offset-2.col-md-8
-        %ul.timeline
-          %li.timeline-inverted
-            .tl-circ
-            .timeline-panel
-              .tl-heading
-                %h4 毕业了
-              %p
-                %small.text-muted
-                  %span.glyphicon.glyphicon-time{"aria-hidden" => "true"}
-                    = '18/06/2015'
-              .tl-body
-                %p
-                  结束了四年的大学生涯，走向了一段新的旅程。期待新的精彩！加油！!
+      .col-md-3
+        .col-md-12
+          = image_tag 'me.jpg'
+        .col-md-12
+          %h3 100度
+        .col-md-12
+          %i.fa.fa-map-marker
+          &nbsp;&nbsp;
+          湖北武汉
+        .col-md-12
+          %i.fa.fa-envelope-o
+          &nbsp;
+          = link_to '2441570482@qq.com', 'mailto:2441570482@qq.com'
+        .col-md-12
+          %i.fa.fa-link
+          &nbsp;
+          = link_to 'http://wangyanqing.me', 'http://wangyanqing.me'
 
-          %li
-            .tl-circ
-            .timeline-panel
-              .tl-heading
-                %h4 thoughtworks实习
-              %p
-                %small.text-muted
-                  %span.glyphicon.glyphicon-time{"aria-hidden" => "true"}
-                    = '02/03/2015'
-              .tl-body
-                %p
-                  从2014年11月23日实习至今，主要学习了Rails开发相关的一些基本知识。正在慢慢的朝着更为专业的程序员方向前进
+      .col-md-9
+        .col-md-12
+          .panel.panel-default
+            .panel-body
+              %h3 个人简介
+              %hr
+              .col-md-12
+                %soan.label.label-primary.customer-text 关于职业
+              .col-md-12
+                %p.customer-paragraph 程序猿一枚，技术一般。没有其他特长，码代码也是各种Google，stackoverflow，Github上摘抄。技术也没有什么优势，写过一点rails，angularjs，android，java代码。崇尚开源，喜欢ruby,python,php,nodejs等语言。是一个Mac控，不喜欢用windows。至于未来走向何处，我不得而知。但行好事。莫问前程就好。
+              .col-md-12
+                %soan.label.label-primary.customer-text 关于跑步
+                %p.customer-paragraph 似乎除了跑步，好像找不出其他的爱好了。享受奔跑时的一种快感，享受哪种汗水的滋味。既然如此，just running，梦想能够跑完一个半马。
+              .col-md-12
+                %soan.label.label-primary.customer-text 关于博客
+                %p.customer-paragraph 技术半吊子，写作半吊子。所以1+1<1，如果您能看完我写的博客，我佩服您的忍耐。但是，关于博客，我会坚持写下去。如果侥幸一些博客对您有所帮助，这是我的荣幸。
+              .col-md-12
+                %soan.label.label-primary.customer-text 关于看书
+                %p.customer-paragraph 一年下来，书没看几本。比起一些大神动辄一年60多本的阅读量，我是望尘莫及。但是，关于读书，我也要坚持读下去。腹有诗书气自华，恩，就是这样。
+              .col-md-12
+                %soan.label.label-primary.customer-text 关于生活
+                %p.customer-paragraph 简单即可，晒晒太阳，谈谈吉他，读读书，写写文章，跑跑步，如果能这样，该多好？
+              .col-md-12
+                %soan.label.label-primary.customer-text 关于网站
+                %p.customer-paragraph 码代码，写文章，维护，运营都是我。基于rails的web网站，个人小玩具，不喜勿喷。
 
 
-          %li.timeline-inverted
-            .tl-circ
-            .timeline-panel
-              .tl-heading
-                %h4 博客上线了
-              %p
-                %small.text-muted
-                  %span.glyphicon.glyphicon-time{"aria-hidden" => "true"}
-                    = '08/12/2014'
-              .tl-body
-                %p
-                  利用octopress搭建的一个博客平台也是正式上线了，欢迎访问<a href="http://wangyanqing.me">我的个人博客</a>
+:css
+  body{
+    background-color: white !important;
+  }
 
-          %li
-            .tl-circ
-            .timeline-panel
-              .tl-heading
-                %h4 来到帝都
-              %p
-                %small.text-muted
-                  %span.glyphicon.glyphicon-time{"aria-hidden" => "true"}
-                    = '22/11/2014'
-              .tl-body
-                %p
-                  第一次坐飞机来到北京，满满的全是兴奋！对于实习的日子，满是期待！!
-                %p
-                  = image_tag 'fj.png', alt: '飞机'
+  .customer-text{
+    font-size: 15px;
+  }
 
-          %li.timeline-inverted
-            .tl-circ
-            .timeline-panel
-              .tl-heading
-                %h4 大四来了
-              %p
-                %small.text-muted
-                  %span.glyphicon.glyphicon-time{"aria-hidden" => "true"}
-                    = '01/09/2014'
-              .tl-body
-                %p
-                  大四来了，曾经遥不可及的毕业，好像就在眼前。长风破浪会有时，直挂云帆济沧海...
+  .customer-paragraph{
+    margin-top: 12px;
+  }
