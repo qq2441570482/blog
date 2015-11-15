@@ -29,9 +29,9 @@
                 .input-group.date.form_date.col-md-5{"data-date" => "", "data-date-format" => "dd MM yyyy", "data-link-field" => "dtp_input2", "data-link-format" => "yyyy-mm-dd"}
                   = f.text_field :created_at, class: 'date-pick'
                   %span.input-group-addon
-                    %span.fa.fa-times
+                    %span.glyphicon.glyphicon-remove
                   %span.input-group-addon
-                    %span.fa.fa-plus
+                    %span.glyphicon.glyphicon-calendar
                 %input#dtp_input2{:type => "hidden", :value => ""}
                 %br
 = render 'shared/bottom'
