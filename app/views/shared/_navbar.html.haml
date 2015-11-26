@@ -29,7 +29,7 @@
                 = link_to '所有标签', tags_path
                 = link_to '新增', new_tag_path
             %li
-              = link_to '注销', session_path(current_user), method: :delete
+              = link_to '注销', session_path(current_user), method: :delete, :id => 'logout'
         - else
           %li= link_to '目录', archive_welcomes_path
           %li= link_to '标签', tags_welcomes_path

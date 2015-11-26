@@ -54,6 +54,11 @@ gem 'factory_girl_rails', '~> 4.0'
 gem 'simplecov'
 
 gem 'font-awesome-rails'
+
+gem 'cucumber'
+gem 'cucumber-rails'
+
+gem 'database_cleaner', group: :test
 # Use unicorn as the app server
 # gem 'unicorn'
 
