@@ -56,9 +56,14 @@ gem 'simplecov'
 gem 'font-awesome-rails'
 
 gem 'cucumber'
-gem 'cucumber-rails'
 
-gem 'database_cleaner', group: :test
+group :test do
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+end
+
+gem 'puma'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
