@@ -62,6 +62,13 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+end
+
+
 gem 'puma'
 
 # Use unicorn as the app server
