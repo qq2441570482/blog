@@ -58,7 +58,7 @@ gem 'font-awesome-rails'
 gem 'cucumber'
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails',:require => false
   gem 'database_cleaner'
 end
 
