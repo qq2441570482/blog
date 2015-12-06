@@ -49,9 +49,7 @@ namespace :deploy do
       on roles :all do
         execute "echo 'hello world'"
         execute 'pwd'
-        execute 'cd current'
-        execute 'pwd'
-        execute './start.sh'
+        execute 'cd current && ./start.sh'
       end
     end
 
