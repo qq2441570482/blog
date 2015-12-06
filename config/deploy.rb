@@ -59,7 +59,8 @@ namespace :deploy do
     task :bundle_cmd do
       on roles :all do
         execute 'echo $HOME'
-        execute 'source $HOME/.bash_profile && bundle'
+        execute 'cd /home/ubuntu && source .bash_profile && cd current && bundle install'
+        execute 'source $HOME/.bash_profile && cd current && bundle'
       end
     end
 
