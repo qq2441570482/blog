@@ -57,7 +57,9 @@ namespace :deploy do
     end
 
     task :bundle_cmd do
-      execute 'source && $HOME/.bash_profile && bundle'
+      on roles :all do
+        execute 'source && $HOME/.bash_profile && bundle'
+      end
     end
 
     after :finishing, :bundle_cmd
