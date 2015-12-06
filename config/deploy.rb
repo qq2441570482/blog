@@ -45,15 +45,18 @@ set :deploy_to, '/home/ubuntu'
 
 namespace :deploy do
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
+  # after :restart, :clear_cache do
+  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      run "echo 'hello world'"
-      run './start.sh'
-    end
+      # run "echo 'hello world'"
+      # run './start.sh'
+    # end
+  # end
+  task :restart do
+    run "echo 'hello world'"
+    run './start.sh'
   end
-
 end
