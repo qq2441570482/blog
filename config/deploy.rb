@@ -51,14 +51,9 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      # run "echo 'hello world'"
-      # run './start.sh'
+      run "echo 'hello world'"
+      run './start.sh'
     # end
   end
 
-end
-
-after :deploy do
-  execute "echo 'hello world'"
-  execute './start.sh'
 end
