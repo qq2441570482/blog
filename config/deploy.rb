@@ -1,8 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 require 'rvm/capistrano'
-
-set :default_shell, '/bin/bash -l'
+set :rvm_ruby_string, '2.1.4'
 
 set :application, 'blog'
 set :repo_url, 'git@github.com:qq2441570482/blog.git'
