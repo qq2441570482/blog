@@ -56,8 +56,8 @@ namespace :deploy do
   # end
 
   task :restart do
-    execute "echo 'hello world'"
-    execute './start.sh'
+    run "echo 'hello world'"
+    run './start.sh'
   end
 
   after :finishing, :restart
