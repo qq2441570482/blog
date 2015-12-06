@@ -10,7 +10,7 @@ set :pty, true
 set :ssh_options, {
     forward_agent: true,
     auth_methods: ["publickey"],
-    keys: ["/home/vagrant/yanqing.pem"]
+    keys: ["~/yanqing.pem"]
 }
 
 # Default branch is :master
