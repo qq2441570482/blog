@@ -1,7 +1,9 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
-set :shell, '/bin/bash'
+set :rvm_ruby_string, '2.1.4'
+set :rvm_type, :user
 
 set :application, 'blog'
 set :repo_url, 'git@github.com:qq2441570482/blog.git'
