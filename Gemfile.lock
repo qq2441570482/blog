@@ -237,6 +237,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   capistrano
+  capistrano-bundler
   capistrano-rails
   capistrano-rvm
   coffee-rails (~> 4.0.0)
