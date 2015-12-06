@@ -56,7 +56,12 @@ namespace :deploy do
       end
     end
 
-    after :finishing, :restart
+    task :bundle_cmd do
+      execute 'source && $HOME/.bash_profile && bundle'
+    end
+
+    after :finishing, :bundle_cmd
+    after :bundle_cmd, :restart
   # after :restart, :clear_cache do
     # on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
