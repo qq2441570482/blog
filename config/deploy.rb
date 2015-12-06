@@ -1,6 +1,5 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 set :rvm_ruby_string, '2.1.4'
 set :rvm_type, :user
