@@ -48,8 +48,8 @@ namespace :deploy do
     task :restart do
       on roles :all do
         execute "echo 'hello world'"
-        execute 'cd ~/ubuntu'
         execute 'pwd'
+        execute 'cd /home/ubuntu/current'
         execute './start.sh'
       end
     end
