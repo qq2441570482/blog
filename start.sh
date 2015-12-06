@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-git pull --rebase
-
-rake db:migrate
+bundle install
+RAILS_ENV=production rake db:migrate
 
 sudo service nginx restart
 
