@@ -49,7 +49,8 @@ namespace :deploy do
       on roles :all do
         execute "echo 'hello world'"
         execute 'pwd'
-        execute 'cd /home/ubuntu/current'
+        execute 'cd current'
+        execute 'pwd'
         execute './start.sh'
       end
     end
