@@ -44,13 +44,15 @@ set :deploy_to, '/home/ubuntu'
 # set :keep_releases, 5
 
 namespace :deploy do
-  on roles :all do
+
     task :restart do
-      execute "echo 'hello world'"
-      execute './start.sh'
+      on roles :all do
+        execute "echo 'hello world'"
+        execute './start.sh'
+      end
     end
+
     after :finishing, :restart
-  end
   # after :restart, :clear_cache do
     # on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
