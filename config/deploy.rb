@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'blog'
-set :repo_url, 'https://github.com/qq2441570482/blog.git'
+set :repo_url, 'git@github.com:qq2441570482/blog.git'
 server 'ec2-52-24-20-199.us-west-2.compute.amazonaws.com', user: 'ubuntu'
 
 set :pty, true
@@ -51,6 +51,8 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      run "echo 'hello world'"
+      run './start.sh'
     end
   end
 
