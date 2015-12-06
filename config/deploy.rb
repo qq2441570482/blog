@@ -2,6 +2,8 @@
 lock '3.4.0'
 require 'rvm/capistrano'
 
+set :default_shell, '/bin/bash -l'
+
 set :application, 'blog'
 set :repo_url, 'git@github.com:qq2441570482/blog.git'
 server 'ec2-52-24-20-199.us-west-2.compute.amazonaws.com', user: 'ubuntu'
