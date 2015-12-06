@@ -59,13 +59,19 @@ namespace :deploy do
     task :bundle_cmd do
       on roles :all do
         execute 'echo $HOME'
-        execute 'cd /home/ubuntu && source .bash_profile && cd current && bundle install'
         execute 'source $HOME/.bash_profile && cd current && bundle'
       end
     end
 
+    task :rake_cmd do
+      on roles :all do
+        execute 'source $HOME/.bash_profile && cd current && RAILS_ENV=production bundle exec rake db:migrate'
+      end
+    end
+
     after :finishing, :bundle_cmd
-    after :bundle_cmd, :restart
+    after :bundle_cmd, :rake_cmd
+    after :rake_cmd, :restart
   # after :restart, :clear_cache do
     # on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
