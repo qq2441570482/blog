@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 require 'rvm/capistrano'
-set :rvm_ruby_string, '2.1.4'
-set :rvm_type, :user
+# set :rvm_ruby_string, '2.1.4'
+# set :rvm_type, :user
 
 set :application, 'blog'
 set :repo_url, 'git@github.com:qq2441570482/blog.git'
@@ -41,7 +41,7 @@ set :deploy_to, '/home/ubuntu'
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-set :default_env, { path: '$PATH:/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/'}
+# set :default_env, { path: '$PATH:/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/'}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -50,8 +50,6 @@ namespace :deploy do
 
     task :restart do
       on roles :all do
-        execute "echo 'hello world'"
-        execute 'pwd'
         execute 'cd current && ./start.sh'
       end
     end
@@ -71,8 +69,8 @@ namespace :deploy do
     end
 
     after :finishing, :bundle_cmd
-    after :bundle_cmd, :rake_cmd
-    after :rake_cmd, :restart
+    # after :bundle_cmd, :rake_cmd
+    after :bundle_cmd, :restart
   # after :restart, :clear_cache do
     # on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
