@@ -66,6 +66,7 @@ namespace :deploy do
     task :rake_cmd do
       on roles :all do
         execute 'source $HOME/.bash_profile && cd current && RAILS_ENV=production bundle exec rake db:migrate'
+        execute 'source $HOME/.bash_profile && cd current && rake assets:precompile RAILS_ENV=production'
       end
     end
 
