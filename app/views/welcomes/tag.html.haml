@@ -20,9 +20,9 @@
               %table.table.table-hover
                 - @tag.articles.order(created_at: :desc).each do |article|
                   %tr
-                    %th
+                    %td
                       = link_to article.title, article_path(article), class: 'btn btn-link'
-                    %th
+                    %td
                       = article.created_at.strftime('%Y-%m-%d')
       = render 'shared/search'
       = render 'shared/tag'
