@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def get_title
     # quote = Quote.find(rand(Quote.all.size) + 1)
     # @title = quote.title
-    @title = '电子竞技没有睡觉'
+    @title = '人生是一场修行'
   end
 
 end
