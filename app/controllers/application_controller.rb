@@ -13,8 +13,7 @@ class ApplicationController < ActionController::Base
 
   def get_title
     # quote = Quote.find(rand(Quote.all.size) + 1)
-    # @title = quote.title
-    @title = '人生是一场修行'
+    @title = Quote.first.title
   end
 
 end
