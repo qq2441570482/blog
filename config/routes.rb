@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :welcomes, only: [] do
     get 'about', on: :collection
+    get 'data', on: :collection
     post 'index', on: :collection
     get 'archive', on: :collection
     get 'tags', on: :collection

@@ -20,6 +20,10 @@ class WelcomesController < ApplicationController
 
   end
 
+  def data
+    @tags = Tag.all.sort_by {|tag| -tag.articles.count}
+  end
+
   def tag
     @tag = Tag.exists?(params[:id]) ? Tag.find(params[:id]) : nil
   end
