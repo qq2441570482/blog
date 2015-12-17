@@ -1,8 +1,15 @@
 <div class="main">
   <div class="container">
-    <div class="row">
-      <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <div class="panel">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
 
@@ -10,20 +17,18 @@
   $(document).ready(function(){
     var chart = new CanvasJS.Chart("chartContainer",
         {
-          animationEnabled: true,
-          axisY: {
-            labelFontSize: 20,
-            labelFontColor: "dimGrey"
-          },
-          axisX: {
-            labelAngle: -30
+          legend: {
+            maxWidth: 350,
+            itemWidth: 120
           },
           data: [
             {
-              type: "column",
+              type: "pie",
+//              showInLegend: true,
+              legendText: "{indexLabel}",
               dataPoints: [
                 <% @tags.each do |tag| %>
-                {label: "<%= tag.name %>", y: <%= tag.articles.count.to_i %> },
+                {indexLabel: "<%= tag.name %>", y: <%= tag.articles.count.to_i %> },
                 <% end %>
               ]
             }
@@ -32,3 +37,9 @@
     chart.render();
   })
 </script>
+
+<style>
+  body{
+    background-color: white !important;
+  }
+</style>
