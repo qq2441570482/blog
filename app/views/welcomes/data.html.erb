@@ -1,15 +1,13 @@
 <div class="main">
   <div class="container">
-    <div class="panel">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-6">
-            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-          </div>
-        </div>
+    <div class="row" style="margin-top: 100px">
+      <div class="col-md-6">
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      </div>
+      <div class="col-md-6">
+        <div id="otherChartContainer" style="height: 300px; width: 100%;"></div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -24,7 +22,6 @@
           data: [
             {
               type: "pie",
-//              showInLegend: true,
               legendText: "{indexLabel}",
               dataPoints: [
                 <% @tags.each do |tag| %>
@@ -34,8 +31,22 @@
             }
           ]
         });
+    var otherChart = new CanvasJS.Chart("otherChartContainer",{
+      data: [
+        {
+          type: "column",
+          dataPoints: [
+            <% @articles.each do |month, posts| %>
+            { label: "<%= month.strftime('%y年%m月') %>", y: <%= posts.size %> },
+            <% end %>
+          ]
+        }
+      ]
+    });
     chart.render();
-  })
+    otherChart.render();
+    $('.canvasjs-chart-credit').remove();
+  });
 </script>
 
 <style>
