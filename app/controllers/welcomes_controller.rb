@@ -26,6 +26,7 @@ class WelcomesController < ApplicationController
 
   def tag
     @tag = Tag.exists?(params[:id]) ? Tag.find(params[:id]) : nil
+    @index_articles = @tag.articles.page(params[:page]).per(12)
   end
 
   def tags
