@@ -1,8 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 require 'capistrano/bundler'
-set :rvm_ruby_string, '2.1.4'
-set :rvm_binary, '~/.rvm/rubies/ruby-2.1.4/bin/'
+# set :rvm_ruby_string, '2.1.4'
+# set :rvm_binary, '~/.rvm/rubies/ruby-2.1.4/bin/'
 # set :rvm_type, :user
 
 set :application, 'blog'
@@ -48,12 +48,6 @@ set :deploy_to, '/home/ubuntu'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :test do
-  task :other do
-    p fetch :database_name
-   end
-end
-
 namespace :deploy do
     # task :restart do
     #   on roles :all do
@@ -76,7 +70,7 @@ namespace :deploy do
     #   end
     # end
 
-    after :finishing, :restart
+    after :finishing, bundler:install
     # after :finishing, :bundle_cmd
     # after :bundle_cmd, :rake_cmd
     # after :bundle_cmd, :restart
