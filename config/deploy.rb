@@ -56,7 +56,7 @@ namespace :deploy do
     task :restart do
       on roles :all do
         p 'hello world'
-        execute "cd #{deploy_to}/current && ./start.sh"
+        execute "cd #{deploy_to}/current && bundle install"
       end
     end
 
@@ -74,7 +74,7 @@ namespace :deploy do
     #   end
     # end
 
-    # after :finishing, :restart
+    after :finishing, :restart
     # after :finishing, :bundle_cmd
     # after :bundle_cmd, :rake_cmd
     # after :bundle_cmd, :restart
