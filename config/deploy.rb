@@ -49,13 +49,15 @@ set :deploy_to, '/home/ubuntu'
 # set :keep_releases, 5
 
 namespace :deploy do
-    # task :restart do
-    #   on roles :all do
-    #     p 'hello world'
-    #     execute "cd #{fetch(:deploy_to)}/current && #{fetch(:default_env)} do bundle install"
-    #   end
-    # end
-  after :finishing, 'bundler:install', :migrate, :compile_assets
+    task :restart do
+      on roles :all do
+        p 'hello world'
+      end
+    end
+  after :finishing, :restart
+  after :restart, 'bundler:install'
+  after 'bundler:install', :migrate
+  after :migrate, :compile_assets
 
     # task :bundle_cmd do
     #   on roles :all do
