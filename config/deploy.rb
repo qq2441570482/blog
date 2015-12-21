@@ -70,7 +70,6 @@ namespace :deploy do
     #   end
     # end
 
-    after :finishing, bundler:install
     # after :finishing, :bundle_cmd
     # after :bundle_cmd, :rake_cmd
     # after :bundle_cmd, :restart
@@ -85,6 +84,8 @@ namespace :deploy do
     # end
   # end
 end
+
+after "deploy:finishing", "bundler:install"
 
 
 
