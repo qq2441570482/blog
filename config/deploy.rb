@@ -42,7 +42,7 @@ set :deploy_to, '/home/ubuntu'
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-set :default_env, { path: '/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/:$PATH'}
+set :default_env, { path: "$PATH:/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/"}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -57,7 +57,8 @@ namespace :deploy do
     task :restart do
       on roles :all do
         p 'hello world'
-        execute "cd #{fetch(:deploy_to)}/current && #{fetch(:rvm_binary)} do bundle install"
+        execute "cd #{fetch(:deploy_to)}/current && bundle install"
+        execute "cd #{fetch(:deploy_to)}/current && #{fetch(:default_env)} do bundle install"
       end
     end
 
