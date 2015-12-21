@@ -42,7 +42,7 @@ set :deploy_to, '/home/ubuntu'
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-# set :default_env, { path: '$PATH:/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/'}
+set :default_env, { path: '/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/:$PATH'}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
