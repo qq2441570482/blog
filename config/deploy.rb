@@ -85,7 +85,9 @@ namespace :deploy do
   # end
 end
 
+p '执行bundle命令之前'
 after "deploy:finishing", "bundler:install"
+p '执行bundle命令之后'
 
 
 
