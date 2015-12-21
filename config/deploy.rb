@@ -55,7 +55,11 @@ namespace :deploy do
     #     execute "cd #{fetch(:deploy_to)}/current && #{fetch(:default_env)} do bundle install"
     #   end
     # end
-  after :finishing, 'bundler:install'
+  after :finishing do
+    p 'begin'
+    'bundler:install'
+    p 'end'
+  end
 
     # task :bundle_cmd do
     #   on roles :all do
