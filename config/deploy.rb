@@ -1,7 +1,8 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 require 'capistrano/bundler'
-# set :rvm_ruby_string, '2.1.4'
+set :rvm_ruby_string, '2.1.4'
+set :rvm_binary, '~/.rvm/rubies/ruby-2.1.4/bin/'
 # set :rvm_type, :user
 
 set :application, 'blog'
@@ -56,7 +57,7 @@ namespace :deploy do
     task :restart do
       on roles :all do
         p 'hello world'
-        execute "cd #{deploy_to}/current && bundle install"
+        execute "cd #{fetch(:deploy_to)}/current && #{fetch(:rvm_binary)} do bundle install"
       end
     end
 
