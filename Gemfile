@@ -43,6 +43,8 @@ gem 'redcarpet'
 
 gem 'pygments.rb'
 
+gem 'nokogiri'
+
 
 gem 'kaminari'
 

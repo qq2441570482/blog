@@ -10,6 +10,7 @@ set :repo_url, 'git@github.com:qq2441570482/blog.git'
 server 'ec2-52-24-20-199.us-west-2.compute.amazonaws.com', user: 'ubuntu'
 
 set :pty, true
+set :bundle_gemfile, -> {release_path.join('Gemfile')}
 
 set :ssh_options, {
     forward_agent: true,
@@ -42,7 +43,7 @@ set :deploy_to, '/home/ubuntu'
 # set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 
 # Default value for default_env is {}
-set :default_env, { path: "$PATH:/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/ruby"}
+# set :default_env, { path: "$PATH:/home/ubuntu/.rvm/gems/ruby-2.1.4/bin/ruby"}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -54,12 +55,12 @@ namespace :test do
 end
 
 namespace :deploy do
-    task :restart do
-      on roles :all do
-        p 'hello world'
-        execute "cd #{fetch(:deploy_to)}/current && #{fetch(:default_env)} do bundle install"
-      end
-    end
+    # task :restart do
+    #   on roles :all do
+    #     p 'hello world'
+    #     execute "cd #{fetch(:deploy_to)}/current && #{fetch(:default_env)} do bundle install"
+    #   end
+    # end
 
     # task :bundle_cmd do
     #   on roles :all do
