@@ -1,6 +1,6 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
-require 'rvm/capistrano'
+require 'capistrano/bundler'
 # set :rvm_ruby_string, '2.1.4'
 # set :rvm_type, :user
 
@@ -46,31 +46,38 @@ set :deploy_to, '/home/ubuntu'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
+namespace :test do
+  task :other do
+    p fetch :database_name
+   end
+end
 
+namespace :deploy do
     task :restart do
       on roles :all do
-        execute 'cd current && ./start.sh'
+        p 'hello world'
+        execute "cd #{deploy_to}/current && ./start.sh"
       end
     end
 
-    task :bundle_cmd do
-      on roles :all do
-        execute 'echo $HOME'
-        execute 'source $HOME/.bash_profile && cd current && bundle'
-      end
-    end
+    # task :bundle_cmd do
+    #   on roles :all do
+    #     execute 'echo $HOME'
+    #     execute 'source $HOME/.bash_profile && cd current && bundle'
+    #   end
+    # end
 
-    task :rake_cmd do
-      on roles :all do
-        execute 'source $HOME/.bash_profile && cd current && RAILS_ENV=production bundle exec rake db:migrate'
-        execute 'source $HOME/.bash_profile && cd current && rake assets:precompile RAILS_ENV=production'
-      end
-    end
+    # task :rake_cmd do
+    #   on roles :all do
+    #     execute 'source $HOME/.bash_profile && cd current && RAILS_ENV=production bundle exec rake db:migrate'
+    #     execute 'source $HOME/.bash_profile && cd current && rake assets:precompile RAILS_ENV=production'
+    #   end
+    # end
 
-    after :finishing, :bundle_cmd
+    # after :finishing, :restart
+    # after :finishing, :bundle_cmd
     # after :bundle_cmd, :rake_cmd
-    after :bundle_cmd, :restart
+    # after :bundle_cmd, :restart
   # after :restart, :clear_cache do
     # on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
