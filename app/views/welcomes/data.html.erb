@@ -1,11 +1,25 @@
 <div class="main">
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
-        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-      </div>
-      <div class="col-md-6">
-        <div id="otherChartContainer" style="height: 300px; width: 100%;"></div>
+      <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">饼状图</a></li>
+          <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">柱状图</a></li>
+          <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">折线图</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="home">
+            <div id="chartContainer" style="height: 300px; width: 50%;"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="profile">
+            <div id="otherChartContainer" style="height: 300px; width: 50%;"></div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="messages">
+            <div id="thirdChartContainer" style="height: 300px; width: 50%;"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -43,9 +57,31 @@
         }
       ]
     });
+    var thirdChart = new CanvasJS.Chart("thirdChartContainer", { 
+      data: [ 
+        { 
+          type: "line", 
+          dataPoints: [ 
+            <% @articles.each do |month, posts| %>
+            { x: new Date(<%= (month - 1.month).strftime('%Y,%m,%d') %>), y: <%= posts.size %> }, 
+            <% end %> 
+          ] 
+        } 
+      ] 
+    });
     chart.render();
     otherChart.render();
+    thirdChart.render();
     $('.canvasjs-chart-credit').remove();
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      console.log('hello')
+      chart.render();
+      otherChart.render();
+      thirdChart.render();
+      e.target
+      e.relatedTarget
+      $('.canvasjs-chart-credit').remove();
+    })
   });
 </script>
 
