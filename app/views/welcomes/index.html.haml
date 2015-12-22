@@ -2,27 +2,29 @@
   .container
     .row.customer-panel
       .col-md-9
-        - if  @index_articles.count > 0
-          - @index_articles.each_with_index  do |article,index|
-            .panel.panel-default
+        .article_panel
+          - if  @index_articles.count > 0
+            - @index_articles.each_with_index  do |article,index|
+              .panel.panel-default
+                .panel-body
+                  %h3
+                    = link_to article.title, article_path(article)
+                  %i.fa.fa-calendar
+                    &nbsp;
+                  = article.created_at.strftime('%Y年%m月%d日')
+                  %hr
+                  = markdown(article.content[0,400]+'...')
+                  = link_to 'more', article_path(article), class: 'btn btn-sm btn-warning'
+                - p index
+                - if (Article.all.size > 5 && (index+1) % 5 == 0) || (Article.all.size > 5 && index == @index_articles.count - 1)
+                  .panel-footer.cutomer-footer-index
+                    = paginate @index_articles
+          - else
+            .panel.panel-danger.customer-panel
+              .panel-heading
+                对不起，无相关文章记录！！
               .panel-body
-                %h3
-                  = link_to article.title, article_path(article)
-                %i.fa.fa-calendar
-                  &nbsp;
-                = article.created_at.strftime('%Y年%m月%d日')
-                %hr
-                = markdown(article.content[0,400]+'...')
-                = link_to 'more', article_path(article), class: 'btn btn-sm btn-warning'
-              - if (index+1) % 5 == 0 || index == @index_articles.count-1
-                .panel-footer.cutomer-footer-index
-                  = paginate @index_articles
-        - else
-          .panel.panel-danger.customer-panel
-            .panel-heading
-              对不起，无相关文章记录！！
-            .panel-body
-              = image_tag '404.png', alt: '404'
+                = image_tag '404.png', alt: '404'
 
       = render 'shared/search'
       = render 'shared/tag'
