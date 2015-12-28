@@ -1,4 +1,4 @@
-- content_for :title, '登陆'
+- content_for :title, t('views.sessions.new.title')
 .main
   .controller
     .row
@@ -8,10 +8,10 @@
             = form_tag sessions_path, class: 'form-horizontal' do
               .form-group
                 .col-md-12
-                  = text_field_tag :username, nil, placeholder: '请输入用户名', class: 'form-control'
+                  = text_field_tag :username, nil, placeholder: t('views.sessions.new.username'), class: 'form-control'
               .form-group
                 .col-md-12
-                  = password_field_tag :password, nil, placeholder: '请输入密码', class: 'form-control'
+                  = password_field_tag :password, nil, placeholder: t('views.sessions.new.password'), class: 'form-control'
               .form-group
                 .col-md-12
-                  = submit_tag '登录', id: 'submit', class: 'btn btn-danger btn-block'
+                  = submit_tag t('views.sessions.new.login'), id: 'submit', class: 'btn btn-danger btn-block'
