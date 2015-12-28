@@ -29,8 +29,18 @@ en:
       truncate: "..."
     sessions:
       new:
-        title: '关于我'
-        login: "登陆"
+        title: '登陆'
         username: '请输入用户名'
         password: '请输入密码'
-
+        login: "登陆"
+    welcomes:
+      about:
+        title: '关于我'
+      archive:
+        title: '目录'
+      data:
+        title: '统计'
+      index:
+        title: '首页'
+      tags:
+        title: '标签'

@@ -3,8 +3,6 @@ Rails.application.routes.draw do
 
   get 'welcomes/tag/:id' => 'welcomes#tag', :as => 'welcome_tag'
 
-  get '/relax' => 'welcomes#relax'
-
   get '/rss' => 'welcomes#rss', defaults: {format: 'json'}
 
   get 'articles/new_use_json'
