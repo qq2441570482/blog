@@ -21,6 +21,10 @@
 
 en:
   views:
+    crud:
+      edit: '修改'
+      delete: '删除'
+      confirm: '你确定要删除吗?'
     pagination:
       first: "首页"
       last: "末页"
@@ -58,3 +62,7 @@ en:
         title: '文章--展示'
       edit:
         title: '文章--编辑'
+        lable_title: '标题'
+        content: '正文'
+        submit: '提交'
+        tag: '标签'
