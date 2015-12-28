@@ -44,3 +44,17 @@ en:
         title: '首页'
       tags:
         title: '标签'
+    tags:
+      index:
+        title: '标签--管理'
+      new:
+        title: '标签--新增'
+    articles:
+      index:
+        title: '文章--管理'
+      new:
+        title: '文章--新增'
+      show:
+        title: '文章--展示'
+      edit:
+        title: '文章--编辑'
