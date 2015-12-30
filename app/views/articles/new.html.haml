@@ -7,16 +7,17 @@
           .panel
             .panel-body
               .form-group
-                = f.label '标题',nil, class: 'control-label'
+                = f.label t('views.articles.new.article_title'), nil, class: 'control-label'
                 = f.text_field :title, class: 'form-control'
               .form-group
-                = f.label '正文', nil, class: 'control-label'
+                = f.label t('views.articles.new.article_content'), nil, class: 'control-label'
                 = f.text_area :content, class: 'form-control', rows: 40
               .form-group
-                = f.submit '提交', class: 'btn btn-default'
+                = f.submit t('views.crud.submit'), class: 'btn btn-default'
         .col-md-3
           .panel.panel-default
-            .panel-heading 标签
+            .panel-heading
+              = t('views.crud.tag')
             .panel-body
               - @tags.each do |tag|
                 .form-group
@@ -24,7 +25,8 @@
                   = f.label tag.id, tag.name, class: 'checkbox-inline'
         .col-md-3
           .panel.panel-default
-            .panel-heading 日期
+            .panel-heading
+              = t('views.articles.new.date')
             .panel-body
               .form-group
                 .input-group.date.form_date.col-md-5{"data-date" => "", "data-date-format" => "dd MM yyyy", "data-link-field" => "dtp_input2", "data-link-format" => "yyyy-mm-dd"}
@@ -33,7 +35,7 @@
                     %span.glyphicon.glyphicon-remove
                   %span.input-group-addon
                     %span.glyphicon.glyphicon-calendar
-                %input#dtp_input2{:type => "hidden", :value => ""}
+                %input#dtp_input2{:type => 'hidden', :value => ''}
                 %br
 = render 'shared/bottom'
 :javascript

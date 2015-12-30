@@ -24,10 +24,9 @@
                 = markdown(@article.content)
               %hr
               - unless @previousArticle.nil?
-                = link_to '上一篇', article_path(@previousArticle), class: 'btn btn-sm btn-link customer-link'
+                = link_to t('views.articles.show.previous'), article_path(@previousArticle), class: 'btn btn-sm btn-link customer-link'
               - unless @nextArticle.nil?
-                = link_to '下一篇', article_path(@nextArticle), class: 'btn btn-sm btn-link customer-link pull-right'
-
+                = link_to t('views.articles.show.next'), article_path(@nextArticle), class: 'btn btn-sm btn-link customer-link pull-right'
             .panel-footer
               #SOHUCS{:sid => @article.id}
       = render 'shared/search'

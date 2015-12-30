@@ -8,10 +8,14 @@
             %table.table.table-striped
               %thead
                 %tr
-                  %th 文章编号
-                  %th 标题
-                  %th 修改
-                  %th 删除
+                  %th
+                    = t('views.articles.index.article_id')
+                  %th
+                    = t('views.articles.index.article_title')
+                  %th
+                    = t('views.articles.index.edit')
+                  %th
+                    = t('views.articles.index.delete')
               %tbody
                 = render @articles
           - if @counts > 8

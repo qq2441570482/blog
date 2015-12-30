@@ -6,7 +6,7 @@
           .panel
             .panel-body
               .form-group
-                = label_tag 'Json文件:', nil, class: 'control-label'
+                = label_tag t('views.articles.new.json_file'), nil, class: 'control-label'
                 = text_area_tag :articles, nil, class: 'form-control', rows: 40
               .form-group
-                = submit_tag '确定', class: 'btn btn-default'
+                = submit_tag  t('views.crud.submit'), class: 'btn btn-default'
