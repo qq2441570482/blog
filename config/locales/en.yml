@@ -32,6 +32,7 @@ en:
       about: '关于我'
       search: '搜索'
       all_tag: '所有标签'
+      nick_name: '100度'
     pagination:
       first: "首页"
       last: "末页"
@@ -47,6 +48,7 @@ en:
     welcomes:
       about:
         title: '关于我'
+        city: '武汉'
       archive:
         title: '目录'
       data:
@@ -81,11 +83,8 @@ en:
         title: '文章--编辑'
         lable_title: '标题'
         content: '正文'
-        submit: '提交'
         tag: '标签'
     shared:
-      bottom:
-        nick_name: '100度'
       navbar:
         article_manage: '文章管理'
         all_article: '所有文章'
@@ -95,3 +94,5 @@ en:
         archive: '目录'
       recent:
         recent_article: '近期文章'
+    welcomes:
+
