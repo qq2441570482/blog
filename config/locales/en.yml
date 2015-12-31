@@ -27,6 +27,9 @@ en:
       submit: '提交'
       confirm: '你确定要删除吗?'
       tag: '标签'
+      new: '新增'
+      calculate: '统计'
+      about: '关于我'
     pagination:
       first: "首页"
       last: "末页"
@@ -78,3 +81,12 @@ en:
         content: '正文'
         submit: '提交'
         tag: '标签'
+    shared:
+      navbar:
+        article_manage: '文章管理'
+        all_article: '所有文章'
+        new_all_article: '批量增加'
+        tag_manage: '标签管理'
+        all_tag: '所有标签'
+        logout: '注销'
+        archive: '目录'

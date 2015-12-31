@@ -13,25 +13,25 @@
         - if current_user
           %li.dropdown
             %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown", :role => "button", "aria-expanded" => "false"}
-              文章管理
+              = t('views.shared.navbar.article_manage')
               %span.caret
             %ul.dropdown-menu{:role => "menu"}
               %li
-                = link_to '所有文章', articles_path
-                = link_to '新增', new_article_path
-                = link_to '批量增加', articles_new_use_json_path
+                = link_to t('views.shared.navbar.all_article'), articles_path
+                = link_to t('views.crud.new'), new_article_path
+                = link_to t('views.shared.navbar.new_all_article'), articles_new_use_json_path
           %li.dropdown
             %a.dropdown-toggle{:href => "#", "data-toggle" => "dropdown", :role => "button",  "aria-expanded" => "false"}
-              标签管理
+              = t('views.shared.navbar.tag_manage')
               %span.caret
             %ul.dropdown-menu{:role => "menu"}
               %li
-                = link_to '所有标签', tags_path
-                = link_to '新增', new_tag_path
+                = link_to t('views.shared.navbar.all_tag'), tags_path
+                = link_to t('views.crud.new'), new_tag_path
             %li
-              = link_to '注销', session_path(current_user), method: :delete, :id => 'logout'
+              = link_to t('views.shared.navbar.logout'), session_path(current_user), method: :delete, :id => 'logout'
         - else
-          %li= link_to '目录', archive_welcomes_path
-          %li= link_to '标签', tags_welcomes_path
-          %li= link_to '统计', data_welcomes_path
-          %li= link_to '关于我', about_welcomes_path
+          %li= link_to t('views.shared.navbar.archive'), archive_welcomes_path
+          %li= link_to t('views.crud.tag'), tags_welcomes_path
+          %li= link_to t('views.crud.calculate'), data_welcomes_path
+          %li= link_to t('views.crud.about'), about_welcomes_path
