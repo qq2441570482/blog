@@ -30,6 +30,8 @@ en:
       new: '新增'
       calculate: '统计'
       about: '关于我'
+      search: '搜索'
+      all_tag: '所有标签'
     pagination:
       first: "首页"
       last: "末页"
@@ -82,11 +84,14 @@ en:
         submit: '提交'
         tag: '标签'
     shared:
+      bottom:
+        nick_name: '100度'
       navbar:
         article_manage: '文章管理'
         all_article: '所有文章'
         new_all_article: '批量增加'
         tag_manage: '标签管理'
-        all_tag: '所有标签'
         logout: '注销'
         archive: '目录'
+      recent:
+        recent_article: '近期文章'
