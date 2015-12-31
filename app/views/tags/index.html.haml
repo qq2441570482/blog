@@ -4,20 +4,25 @@
     .row
       .col-md-9
         .panel.customer-panel.panel-default
-          .panel-heading 标签列表
+          .panel-heading
+            = t('views.tags.index.tag_list')
           .panel-body
             =form_tag destroy_multiple_tags_path, method: :delete
             %table.table.table-hover
               %thead
                 %tr
-                  %th 选择
-                  %th 标签编号
-                  %th 内容
-                  %th 删除
+                  %th
+                    = t('views.tags.index.select')
+                  %th
+                    = t('views.tags.index.tag_id')
+                  %th
+                    = t('views.tags.index.content')
+                  %th
+                    = t('views.crud.delete')
               %tbody
                 = render @tags
                 %input(type="checkbox" id="checkall" value="全选")
-                = submit_tag '删除全部', class: 'btn btn-sm btn-link'
+                = submit_tag t('views.tags.index.delete_all'), class: 'btn btn-sm btn-link'
           - if @count > 8
             .panel-footer.cutomer-footer
               =paginate @tags

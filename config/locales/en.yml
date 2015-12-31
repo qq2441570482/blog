@@ -41,7 +41,7 @@ en:
       truncate: "..."
     sessions:
       new:
-        title: '登陆'
+        title: '登陆中心'
         username: '请输入用户名'
         password: '请输入密码'
         login: "登陆"
@@ -49,6 +49,7 @@ en:
       about:
         title: '关于我'
         city: '武汉'
+        error: '对不起，无相关文章记录！！'
       archive:
         title: '目录'
       data:
@@ -60,15 +61,20 @@ en:
     tags:
       index:
         title: '标签--管理'
+        tag_list: '标签列表'
+        select: '选择'
+        tag_id: '标签编号'
+        content: '内容'
+        delete_all: '删除全部'
       new:
         title: '标签--新增'
+        name: '名称'
     articles:
       index:
         title: '文章--管理'
         article_id: '文章编号'
         article_title: '标题'
         edit: '修改'
-        delete: '删除'
       new:
         title: '文章--新增'
         article_title: '标题'
@@ -94,5 +100,3 @@ en:
         archive: '目录'
       recent:
         recent_article: '近期文章'
-    welcomes:
-
