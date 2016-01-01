@@ -1,15 +1,13 @@
 - content_for :title, t('views.tags.new.title')
-.main
-  .container
-    .row
-      .col-md-9
-        .panel.customer-panel
-          .panel-body
-            = form_for @tag do |f|
-              .form-group
-                = f.label t('views.tags.new.name'), class: 'control-label'
-                = f.text_field :name, class: 'form-control'
-              .form-group
-                = f.submit t('views.crud.submit'), class: 'btn btn-default'
-      = render 'shared/tag'
-    = render 'shared/bottom'
+.row
+  .col-md-9
+    .panel.customer-panel
+      .panel-body
+        = form_for @tag do |f|
+          .form-group
+            = f.label t('views.tags.new.name'), class: 'control-label'
+            = f.text_field :name, class: 'form-control'
+          .form-group
+            = f.submit t('views.crud.submit'), class: 'btn btn-default'
+  = render 'shared/tag'
+= render 'shared/bottom'

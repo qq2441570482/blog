@@ -1,38 +1,37 @@
 - content_for :title, t('views.articles.show.title')
-.main
-  .container
-    .row
-      .col-md-9
-        .panel.panel-info
-          - if  @article.nil?
-            = image_tag '404.png'
-          - else
-            .panel-body
+.row
+  .col-md-9
+    .article_panel
+      .panel.panel-info
+        - if  @article.nil?
+          = image_tag '404.png'
+        - else
+          .panel-body
+            %div
+              %h2= @article.title
+              %i.fa.fa-calendar
+                &nbsp;
+              = @article.created_at.strftime('%Y年%m月%d日')
+            - if @article.tags.count > 0
               %div
-                %h2= @article.title
-                %i.fa.fa-calendar
+                %i.fa.fa-tag
                   &nbsp;
-                = @article.created_at.strftime('%Y年%m月%d日')
-              - if @article.tags.count > 0
-                %div
-                  %i.fa.fa-tag
-                    &nbsp;
-                  - @article.tags.each do |tag|
-                    = link_to tag.name, "/welcomes/tag/#{tag.id}", class: 'btn btn-info btn-xs'
-              %hr
-              - if @article.content
-                = markdown(@article.content)
-              %hr
-              - unless @previousArticle.nil?
-                = link_to t('views.articles.show.previous'), article_path(@previousArticle), class: 'btn btn-sm btn-link customer-link'
-              - unless @nextArticle.nil?
-                = link_to t('views.articles.show.next'), article_path(@nextArticle), class: 'btn btn-sm btn-link customer-link pull-right'
-            .panel-footer
-              #SOHUCS{:sid => @article.id}
-      = render 'shared/search'
-      = render 'shared/tag'
-      = render 'shared/recent'
-    = render 'shared/bottom'
+                - @article.tags.each do |tag|
+                  = link_to tag.name, "/welcomes/tag/#{tag.id}", class: 'btn btn-info btn-xs'
+            %hr
+            - if @article.content
+              = markdown(@article.content)
+            %hr
+            - unless @previousArticle.nil?
+              = link_to t('views.articles.show.previous'), article_path(@previousArticle), class: 'btn btn-sm btn-link customer-link'
+            - unless @nextArticle.nil?
+              = link_to t('views.articles.show.next'), article_path(@nextArticle), class: 'btn btn-sm btn-link customer-link pull-right'
+          .panel-footer
+            #SOHUCS{:sid => @article.id}
+  = render 'shared/search'
+  = render 'shared/tag'
+  = render 'shared/recent'
+= render 'shared/bottom'
 
 :javascript
   (function(){

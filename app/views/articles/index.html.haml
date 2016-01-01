@@ -1,26 +1,24 @@
 - content_for :title, t('views.articles.index.title')
-.main
-  .container
-    .row
-      .col-md-9
-        .panel.customer-panel
-          .panel-body
-            %table.table.table-striped
-              %thead
-                %tr
-                  %th
-                    = t('views.articles.index.article_id')
-                  %th
-                    = t('views.articles.index.article_title')
-                  %th
-                    = t('views.articles.index.edit')
-                  %th
-                    = t('views.crud.delete')
-              %tbody
-                = render @articles
-          - if @counts > 8
-            .panel-footer.cutomer-footer
-              = paginate @articles
-      = render 'shared/search'
-      = render 'shared/tag'
-    = render 'shared/bottom'
+.row
+  .col-md-9
+    .panel.customer-panel
+      .panel-body
+        %table.table.table-striped
+          %thead
+            %tr
+              %th
+                = t('views.articles.index.article_id')
+              %th
+                = t('views.articles.index.article_title')
+              %th
+                = t('views.articles.index.edit')
+              %th
+                = t('views.crud.delete')
+          %tbody
+            = render @articles
+      - if @counts > 8
+        .panel-footer.cutomer-footer
+          = paginate @articles
+  = render 'shared/search'
+  = render 'shared/tag'
+= render 'shared/bottom'

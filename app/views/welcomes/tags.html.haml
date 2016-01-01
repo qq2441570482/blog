@@ -1,22 +1,20 @@
 - content_for :title, t('views.welcomes.tags.title')
-.main
-  .container
-    .row
-      .col-md-9
-        .panel.customer-panel
+.row
+  .col-md-9
+    .panel.customer-panel
+      .panel-body
+        .panel
           .panel-body
-            .panel
-              .panel-body
-                - @tags.each do |tag|
-                  %button.btn.btn-sm.btn-primary
-                    = tag.name
-                    %span.badge= tag.articles.count
-                  %ul.list-group
-                  - tag.articles.order(created_at: :desc).each do |article|
-                    %li.list-group-item.customer-item
-                      =article.created_at.strftime('%Y年%m月%d日') + '     ---->     '
-                      =link_to(article.title, article_path(article))
-                  %br
-      = render 'shared/search'
-      = render 'shared/recent'
-    = render 'shared/bottom'
+            - @tags.each do |tag|
+              %button.btn.btn-sm.btn-primary
+                = tag.name
+                %span.badge= tag.articles.count
+              %ul.list-group
+              - tag.articles.order(created_at: :desc).each do |article|
+                %li.list-group-item.customer-item
+                  =article.created_at.strftime('%Y年%m月%d日') + '     ---->     '
+                  =link_to(article.title, article_path(article))
+              %br
+  = render 'shared/search'
+  = render 'shared/recent'
+= render 'shared/bottom'

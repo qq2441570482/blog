@@ -1,20 +1,18 @@
 - content_for :title, t('views.welcomes.archive.title')
-.main
-  .container
-    .row
-      .col-md-9
-        .panel.customer-panel
+.row
+  .col-md-9
+    .panel.customer-panel
+      .panel-body
+        .panel
           .panel-body
-            .panel
-              .panel-body
-                - @articles.each do |month, posts|
-                  %h4= month.strftime('%Y年%m月')
-                  %ul.list-group
-                  - posts.each do |post|
-                    %li.list-group-item
-                      =post.created_at.strftime('%Y-%m-%d') + '     ---->     '
-                      =link_to(post.title, article_path(post))
-                  %br
-      = render 'shared/search'
-      = render 'shared/tag'
-    = render 'shared/bottom'
+            - @articles.each do |month, posts|
+              %h4= month.strftime('%Y年%m月')
+              %ul.list-group
+              - posts.each do |post|
+                %li.list-group-item
+                  =post.created_at.strftime('%Y-%m-%d') + '     ---->     '
+                  =link_to(post.title, article_path(post))
+              %br
+  = render 'shared/search'
+  = render 'shared/tag'
+= render 'shared/bottom'

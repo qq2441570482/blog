@@ -1,12 +1,10 @@
-.main
-  .container
-    .row
-      = form_tag articles_create_all_path, method: :post do
-        .col-md-9
-          .panel
-            .panel-body
-              .form-group
-                = label_tag t('views.articles.new.json_file'), nil, class: 'control-label'
-                = text_area_tag :articles, nil, class: 'form-control', rows: 40
-              .form-group
-                = submit_tag  t('views.crud.submit'), class: 'btn btn-default'
+.row
+  = form_tag articles_create_all_path, method: :post do
+    .col-md-9
+      .panel
+        .panel-body
+          .form-group
+            = label_tag t('views.articles.new.json_file'), nil, class: 'control-label'
+            = text_area_tag :articles, nil, class: 'form-control', rows: 40
+          .form-group
+            = submit_tag  t('views.crud.submit'), class: 'btn btn-default'
