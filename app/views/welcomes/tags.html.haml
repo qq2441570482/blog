@@ -12,7 +12,7 @@
               %ul.list-group
               - tag.articles.order(created_at: :desc).each do |article|
                 %li.list-group-item.customer-item
-                  =article.created_at.strftime('%Y年%m月%d日') + '     ---->     '
+                  =article.created_at.strftime(t('views.crud.format_string')) + '     ---->     '
                   =link_to(article.title, article_path(article))
               %br
   = render 'shared/search'

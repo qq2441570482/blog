@@ -33,6 +33,7 @@ en:
       search: '搜索'
       all_tag: '所有标签'
       nick_name: '100度'
+      format_string: '%Y年%m月%d日'
     pagination:
       first: "首页"
       last: "末页"

@@ -11,7 +11,7 @@
               %h2= @article.title
               %i.fa.fa-calendar
                 &nbsp;
-              = @article.created_at.strftime('%Y年%m月%d日')
+              = @article.created_at.strftime(t('views.crud.format_string'))
             - if @article.tags.count > 0
               %div
                 %i.fa.fa-tag
