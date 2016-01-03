@@ -1,16 +1,16 @@
 class WelcomesController < ApplicationController
-  before_action :all_articles, only: [:index,:tag, :archive, :tags]
+  before_action :all_articles, only: [:index, :tag, :archive, :tags]
   before_action :all_tags, only: [:index, :tag, :archive]
 
   def index
-     @index_articles = Article.all.order(created_at: :desc).page(params[:page]).per(5)
-     if params[:condition].present?
+    @index_articles = Article.all.order(created_at: :desc).page(params[:page]).per(5)
+    if params[:condition].present?
       @index_articles = @index_articles.search(:title_cont => params[:condition]).result
-     end
+    end
   end
 
   def archive
-    @articles = Article.all.order(created_at: :desc).group_by{|m| m.created_at.beginning_of_month}
+    @articles = Article.all.order(created_at: :desc).group_by { |m| m.created_at.beginning_of_month }
   end
 
   def about
@@ -21,8 +21,8 @@ class WelcomesController < ApplicationController
   end
 
   def data
-    @tags = Tag.all.sort_by {|tag| -tag.articles.count}
-    @articles = Article.all.order(created_at: :desc).group_by{|m| m.created_at.beginning_of_month}
+    @tags = Tag.all.sort_by { |tag| -tag.articles.count }
+    @articles = Article.all.order(created_at: :desc).group_by { |m| m.created_at.beginning_of_month }
   end
 
   def tag
@@ -31,7 +31,7 @@ class WelcomesController < ApplicationController
   end
 
   def tags
-    @tags = Tag.all.sort_by {|tag| -tag.articles.count}
+    @tags = Tag.all.sort_by { |tag| -tag.articles.count }
   end
 
   def rss

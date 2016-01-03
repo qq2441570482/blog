@@ -1,28 +1,28 @@
 class TagsController < ApplicationController
   before_action :all_tags, only: [:index, :new]
-	before_action :all_articles, only: [:index]
+  before_action :all_articles, only: [:index]
   before_action :require_login
 
-	def index
-		@count = Tag.all.count
-	end
+  def index
+    @count = Tag.all.count
+  end
 
-	def new
-		@tag = Tag.new
-	end
+  def new
+    @tag = Tag.new
+  end
 
-	def create
-		if Tag.create(tag_params)
-			redirect_to tags_path
-		else
-			render :new
-		end
-	end
+  def create
+    if Tag.create(tag_params)
+      redirect_to tags_path
+    else
+      render :new
+    end
+  end
 
-	def destroy
-		@tag = Tag.find(params[:id])
-		@tag.destroy
-		redirect_to tags_path
+  def destroy
+    @tag = Tag.find(params[:id])
+    @tag.destroy
+    redirect_to tags_path
   end
 
   def destroy_multiple
@@ -31,16 +31,16 @@ class TagsController < ApplicationController
   end
 
 
-	private 
-	def tag_params
-		params.require(:tag).permit(:name)
+  private
+  def tag_params
+    params.require(:tag).permit(:name)
   end
 
   def all_tags
-		@tags = Tag.all.order(created_at: :desc).page(params[:page]).per(8)
-	end
+    @tags = Tag.all.order(created_at: :desc).page(params[:page]).per(8)
+  end
 
-	def all_articles
-		@articles = Article.all.order(created_at: :desc).page(params[:page]).per(10)
-	end
+  def all_articles
+    @articles = Article.all.order(created_at: :desc).page(params[:page]).per(10)
+  end
 end
