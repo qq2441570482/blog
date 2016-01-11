@@ -10,7 +10,7 @@
   display: block;
   overflow: hidden;
   float: left;
-  background: url("quote_before.png") no-repeat;
+  background: url("../../../public/quote_before.png") no-repeat;
 }
 .shuoshuo_quote_after {
   font-size: 0;
@@ -20,7 +20,7 @@
   display: block;
   overflow: hidden;
   float: right;
-  background: url("./quote_after.png") no-repeat;
+  background: url("../../../public/quote_after.png") no-repeat;
 }
 
 .shuoshuo_detail {
