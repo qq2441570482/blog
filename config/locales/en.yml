@@ -101,3 +101,6 @@ en:
         archive: '目录'
       recent:
         recent_article: '近期文章'
+    quotes:
+      index:
+        title: "说说"

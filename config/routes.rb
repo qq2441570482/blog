@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'quotes/index'
+
   root to: 'welcomes#index'
 
   get 'welcomes/tag/:id' => 'welcomes#tag', :as => 'welcome_tag'
