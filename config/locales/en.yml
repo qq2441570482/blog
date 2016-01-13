@@ -34,6 +34,7 @@ en:
       all_tag: '所有标签'
       nick_name: '100度'
       format_string: '%Y年%m月%d日'
+      all_shuoshuo: "所有说说"
     pagination:
       first: "首页"
       last: "末页"
@@ -99,6 +100,7 @@ en:
         tag_manage: '标签管理'
         logout: '注销'
         archive: '目录'
+        shuoshuo_manage: "说说管理"
       recent:
         recent_article: '近期文章'
     quotes:
