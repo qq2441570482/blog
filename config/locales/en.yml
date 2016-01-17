@@ -35,6 +35,7 @@ en:
       nick_name: '100度'
       format_string: '%Y年%m月%d日'
       all_shuoshuo: "所有说说"
+      shuoshuo: "说说"
     pagination:
       first: "首页"
       last: "末页"
@@ -106,3 +107,6 @@ en:
     quotes:
       index:
         title: "说说"
+      new:
+        title: "新增--说说"
+        quote_title: "内容"

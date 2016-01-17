@@ -40,6 +40,7 @@
               = link_to t('views.shared.navbar.logout'), session_path(current_user), method: :delete, :id => 'logout'
         - else
           %li= link_to t('views.shared.navbar.archive'), archive_welcomes_path
+          %li= link_to t('views.crud.shuoshuo'), shuoshuo_welcomes_path
           %li= link_to t('views.crud.tag'), tags_welcomes_path
           %li= link_to t('views.crud.calculate'), data_welcomes_path
           %li= link_to t('views.crud.about'), about_welcomes_path

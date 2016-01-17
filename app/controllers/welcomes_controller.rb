@@ -20,6 +20,10 @@ class WelcomesController < ApplicationController
 
   end
 
+  def shuoshuo
+    @quotes = Quote.all.order(created_at: :desc)
+  end
+
   def data
     @tags = Tag.all.sort_by { |tag| -tag.articles.count }
     @articles = Article.all.order(created_at: :desc).group_by { |m| m.created_at.beginning_of_month }
