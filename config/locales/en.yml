@@ -78,6 +78,8 @@ en:
         article_id: '文章编号'
         article_title: '标题'
         edit: '修改'
+        quote_id: "编号"
+        quote_title: "标题"
       new:
         title: '文章--新增'
         article_title: '标题'
