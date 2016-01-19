@@ -1,5 +1,5 @@
 %tr
   %td= quote.id
-  %td= link_to quote.title, quote_path(quote)
-  %td= link_to t('views.crud.edit') , edit_quote_path(quote), class: 'btn btn-sm btn-primary'
-  %td= link_to t('views.crud.delete') , quote_path(quote), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: t('views.crud.confirm')}
+  %td= quote.title
+  %td= link_to t('views.crud.edit'), edit_quote_path(quote), class: 'btn btn-sm btn-primary'
+  %td= link_to t('views.crud.delete'), quote_path(quote), method: :delete, class: 'btn btn-sm btn-danger'

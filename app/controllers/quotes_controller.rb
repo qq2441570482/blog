@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   before_action :require_login
+
   def index
     @quotes = Quote.all.order(created_at: :desc)
   end
@@ -11,7 +12,7 @@ class QuotesController < ApplicationController
   def create
     quote = Quote.new(quote_params)
     if quote.save
-        redirect_to quotes_path
+      redirect_to quotes_path
     else
       render :new
     end
