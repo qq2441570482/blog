@@ -11,7 +11,12 @@
               %h2= @article.title
               %i.fa.fa-calendar
                 &nbsp;
-              = @article.created_at.strftime(t('views.crud.format_string'))
+              - if @article.created_at.today?
+                = 'today'
+              - elsif @article.created_at == Date.yesterday
+                = 'yesterday'
+              - else
+                = @article.created_at.strftime(t('views.crud.format_string'))
             - if @article.tags.count > 0
               %div
                 %i.fa.fa-tag
