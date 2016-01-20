@@ -112,3 +112,5 @@ en:
       new:
         title: "新增--说说"
         quote_title: "内容"
+      edit:
+        title: "说说-编辑"
