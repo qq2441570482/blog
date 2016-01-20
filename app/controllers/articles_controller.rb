@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
 
 
   def index
+    binding.pry
     @articles = Article.all.order(created_at: :desc).page(params[:page]).per(8)
     @counts = Article.all.count
   end
