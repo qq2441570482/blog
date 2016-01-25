@@ -21,11 +21,7 @@ class ArticlesController < ApplicationController
     @previousArticle = Article.all.order(created_at: :desc)[index - 1] if index != 0
     @nextArticle = Article.all.order(created_at: :desc)[index + 1] if index != (Article.count -1)
 
-    respond_with(@article)
-
-  end
-
-  def new_use_json
+    respond_with @article
 
   end
 
