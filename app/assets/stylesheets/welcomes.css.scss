@@ -4,7 +4,10 @@
 
 //.main { background: #fff; }
 
-img { border: 0; max-width: 100%; }
+img {
+  border: 0;
+  max-width: 100%;
+}
 
 .page-header h1 {
   font-size: 3.26em;
@@ -13,18 +16,22 @@ img { border: 0; max-width: 100%; }
   text-shadow: 1px 1px 0 #000;
 }
 
-.bottomDiv{
+.bottomDiv {
   text-align: center;
 }
 
-.cutomer-footer-index{
+.cutomer-footer-index {
   text-align: right;
 }
 
-.customer-item{
+.customer-item {
   margin-left: 50px;
 }
 
-.article_panel{
+.article_panel {
   min-height: 500px;
+}
+
+.customer-month {
+  margin-top: 20px;
 }

@@ -36,6 +36,8 @@ en:
       format_string: '%Y年%m月%d日'
       all_shuoshuo: "所有说说"
       shuoshuo: "说说"
+      today: "今天"
+      yesterday: "昨天"
     pagination:
       first: "首页"
       last: "末页"

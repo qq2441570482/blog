@@ -5,10 +5,17 @@
       .col-md-12
         .col-md-1
           .shuoshuo_time.bg6
-            %span.day
-              = quote.created_at.day
-            %span.month
-              = quote.created_at.month.to_s + '月'
+            - if quote.created_at.today?
+              %span.month.customer-month
+                = t('views.crud.today')
+            - elsif quote.created_at.yesterday
+              %span.month.customer-month
+                = t('views.crud.yesterday')
+            - else
+              %span.day
+                = quote.created_at.day
+              %span.month
+                = quote.created_at.month.to_s + '月'
         .col-md-8
           .panel.panel-default
             .panel-body
