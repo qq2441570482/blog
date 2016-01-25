@@ -23,12 +23,11 @@ class QuotesController < ApplicationController
     @quote.destroy
     redirect_to quotes_path
   end
-  
+
   def update
     @quote.update(quote_params)
     redirect_to quotes_path
   end
-
 
   private
   def quote_params
