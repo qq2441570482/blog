@@ -12,6 +12,7 @@
   float: left;
   background: url('/quote_before.png') no-repeat;
 }
+
 .shuoshuo_quote_after {
   font-size: 0;
   line-height: 99;
@@ -38,7 +39,7 @@
   overflow: hidden;
   //margin-left: 48px;
 
-  .day{
+  .day {
     font: 24px/1 Tahoma;
     display: block;
     margin-top: 10px;
@@ -49,7 +50,12 @@
     display: block;
   }
 }
+
 .bg6 {
   color: white;
   background-color: #49a0e1;
+}
+
+.customer-area {
+  min-height: 500px;
 }
