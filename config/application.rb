@@ -24,6 +24,12 @@ module Blog
         'X-Frame-Options' => 'ALLOWALL'
     }
 
+    config.action_dispatch.default_headers.merge!(
+        {
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Request-Method' => '*'
+        })
+
   end
 
 end
