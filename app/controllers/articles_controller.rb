@@ -11,6 +11,11 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all.order(created_at: :desc).page(params[:page]).per(8)
     @counts = Article.all.count
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data Article.all.order(created_at: :desc).to_csv }
+    end
   end
 
   def show
