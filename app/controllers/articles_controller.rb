@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  include Download
+
   before_action :require_login, only: [:index, :new, :create, :edit]
   before_action :find_article, only: [:edit, :update, :destroy]
   before_action :new_article, only: [:new]
@@ -15,7 +17,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       format.html
       format.csv do
-        send_data Article.all.order(created_at: :desc).to_csv, :filename => 'my_all_articles.csv'
+        send_data to_csv(Article.all.order(created_at: :desc)), :filename => 'my_all_articles.csv'
       end
     end
   end
