@@ -1,10 +1,20 @@
 class TagsController < ApplicationController
+  include Download
+
   before_action :all_tags, only: [:index, :new]
   before_action :all_articles, only: [:index]
   before_action :require_login
 
   def index
     @count = Tag.all.count
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data to_csv(Tag.all.order(created_at: :desc)), :filename => 'my_all_tags.csv'
+      end
+    end
+
   end
 
   def new
