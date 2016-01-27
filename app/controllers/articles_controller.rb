@@ -14,7 +14,9 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv { send_data Article.all.order(created_at: :desc).to_csv }
+      format.csv do
+        send_data Article.all.order(created_at: :desc).to_csv
+      end
     end
   end
 
