@@ -1,9 +1,18 @@
 class QuotesController < ApplicationController
+  include Download
+  
   before_action :require_login
   before_action :find_a_quote, only: [:destroy, :edit, :update]
 
   def index
     @quotes = Quote.all.order(created_at: :desc)
+
+    respond_to do |format|
+      format.html
+      format.csv do
+        send_data to_csv(Quote.all.order(created_at: :desc)), :filename => 'my_all_quotes.csv'
+      end
+    end
   end
 
   def new
