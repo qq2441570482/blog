@@ -16,4 +16,9 @@
                 = t('views.crud.delete')
           %tbody
             = render @quotes
+        - if @count > 8
+          %div.customer-table-foot
+            %tfoot
+              =paginate @quotes
+
 = render 'shared/bottom'

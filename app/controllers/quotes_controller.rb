@@ -1,11 +1,12 @@
 class QuotesController < ApplicationController
   include Download
-  
+
   before_action :require_login
   before_action :find_a_quote, only: [:destroy, :edit, :update]
 
   def index
-    @quotes = Quote.all.order(created_at: :desc)
+    @count = Quote.all.count
+    @quotes = Quote.all.order(created_at: :desc).page(params[:page]).per(8)
 
     respond_to do |format|
       format.html
