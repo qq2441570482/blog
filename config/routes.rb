@@ -15,14 +15,11 @@ Rails.application.routes.draw do
     post 'index', on: :collection
     get 'archive', on: :collection
     get 'tags', on: :collection
-    get 'shuoshuo', on: :collection
   end
 
   resources :articles
 
   resources :sessions , only: [:create, :destroy]
-
-  resources :quotes
 
   get '/signin' => 'sessions#new'
 

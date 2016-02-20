@@ -34,8 +34,6 @@ en:
       all_tag: '所有标签'
       nick_name: '100度'
       format_string: '%Y年%m月%d日'
-      all_shuoshuo: "所有说说"
-      shuoshuo: "说说"
       today: "今天"
       yesterday: "昨天"
     pagination:
@@ -80,8 +78,6 @@ en:
         article_id: '文章编号'
         article_title: '标题'
         edit: '修改'
-        quote_id: "编号"
-        quote_title: "标题"
       new:
         title: '文章--新增'
         article_title: '标题'
@@ -105,14 +101,5 @@ en:
         tag_manage: '标签管理'
         logout: '注销'
         archive: '目录'
-        shuoshuo_manage: "说说管理"
       recent:
         recent_article: '近期文章'
-    quotes:
-      index:
-        title: "说说"
-      new:
-        title: "新增--说说"
-        quote_title: "内容"
-      edit:
-        title: "说说-编辑"
