@@ -3,7 +3,8 @@
   <div>
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">饼状图</a></li>
+      <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">饼状图</a>
+      </li>
       <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">柱状图</a></li>
       <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">折线图</a></li>
     </ul>
@@ -23,48 +24,48 @@
 </div>
 
 <script type='text/javascript'>
-  $(document).ready(function(){
+  $(document).ready(function () {
     var chart = new CanvasJS.Chart("chartContainer",
-        {
-          legend: {
-            maxWidth: 350,
-            itemWidth: 120
-          },
-          data: [
-            {
-              type: "pie",
-              legendText: "{indexLabel}",
-              dataPoints: [
-                <% @tags.each do |tag| %>
-                {indexLabel: "<%= tag.name %>", y: <%= tag.articles.count.to_i %> },
-                <% end %>
-              ]
-            }
-          ]
-        });
-    var otherChart = new CanvasJS.Chart("otherChartContainer",{
+      {
+        legend: {
+          maxWidth: 350,
+          itemWidth: 120
+        },
+        data: [
+          {
+            type: "pie",
+            legendText: "{indexLabel}",
+            dataPoints: [
+              <% @tags.each do |tag| %>
+              {indexLabel: "<%= tag.name %>", y: <%= tag.articles.count.to_i %>},
+              <% end %>
+            ]
+          }
+        ]
+      });
+    var otherChart = new CanvasJS.Chart("otherChartContainer", {
       data: [
         {
           type: "column",
           dataPoints: [
             <% @articles.each do |month, posts| %>
-            { label: "<%= month.strftime('%y年%m月') %>", y: <%= posts.size %> },
+            {label: "<%= month.strftime('%y年%m月') %>", y: <%= posts.size %>},
             <% end %>
           ]
         }
       ]
     });
-    var thirdChart = new CanvasJS.Chart("thirdChartContainer", { 
-      data: [ 
-        { 
-          type: "line", 
-          dataPoints: [ 
+    var thirdChart = new CanvasJS.Chart("thirdChartContainer", {
+      data: [
+        {
+          type: "line",
+          dataPoints: [
             <% @articles.each do |month, posts| %>
-            { x: new Date(<%= (month - 1.month).strftime('%Y,%m,%d') %>), y: <%= posts.size %> }, 
-            <% end %> 
-          ] 
-        } 
-      ] 
+            {x: new Date(<%= (month - 1.month).strftime('%Y,%m,%d') %>), y: <%= posts.size %>},
+            <% end %>
+          ]
+        }
+      ]
     });
     chart.render();
     otherChart.render();
@@ -83,7 +84,7 @@
 </script>
 
 <style>
-  body{
+  body {
     background-color: white !important;
   }
 </style>

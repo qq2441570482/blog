@@ -12,7 +12,11 @@
 <script type="text/javascript">
   var word_list = [
     <% @tags.each do |tag| %>
-      {text: "<%= tag.name %>", weight: Math.floor((Math.random() * 10) + 1), link: {href: "/welcomes/tag/<%= tag.id %>"}  },
+    {
+      text: "<%= tag.name %>",
+      weight: Math.floor((Math.random() * 10) + 1),
+      link: {href: "/welcomes/tag/<%= tag.id %>"}
+    },
     <% end %>
   ];
 
