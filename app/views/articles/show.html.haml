@@ -8,9 +8,9 @@
         - else
           .panel-body
             %div
-              %h2= @article.title
+              %h3= @article.title
               %i.fa.fa-calendar
-                &nbsp;
+                &nbsp;&nbsp;
               - if @article.created_at.today?
                 = 'today'
               - elsif @article.created_at == Date.yesterday
@@ -31,28 +31,9 @@
               = link_to t('views.articles.show.previous'), article_path(@previousArticle), class: 'btn btn-sm btn-link customer-link'
             - unless @nextArticle.nil?
               = link_to t('views.articles.show.next'), article_path(@nextArticle), class: 'btn btn-sm btn-link customer-link pull-right'
-          .panel-footer
-            #SOHUCS{:sid => @article.id}
   = render 'shared/search'
   = render 'shared/tag'
   = render 'shared/recent'
 = render 'shared/bottom'
-
-:javascript
-  (function(){
-    var appid = 'cyrGl2I4O',
-    conf = 'prod_76dcdc4e5f778b841e78a35b938c555c';
-    var doc = document,
-    s = doc.createElement('script'),
-    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-    s.type = 'text/javascript';
-    s.charset = 'utf-8';
-    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-    h.insertBefore(s,h.firstChild);
-    })()
-
-  $(document).ready(function() {
-    $('table').addClass('table table-bordered');
-  });
 
 

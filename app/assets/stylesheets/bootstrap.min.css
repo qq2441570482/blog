@@ -1539,7 +1539,7 @@ kbd kbd {
 pre {
   font-family: "Monaco", "Inconsolata", "Consolas", monospace;
   display: block;
-  margin: 0 0 10px;
+  margin: 0 0 0 0;
   font-size: 13px;
   line-height: 1.42857143;
   word-wrap: break-word;

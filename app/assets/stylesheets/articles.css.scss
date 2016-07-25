@@ -8,19 +8,13 @@
 }
 
 .highlight {
-  font-family: Monaco;
+  padding: 16px;
   overflow: auto;
-  display: block;
-  line-height: 1.5em;
-  border-radius: 5px;
-  padding: 10px!important;
-  white-space: pre;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #888;
-  font-size: 13px;
-  background: darkslategrey;
-  color: white;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  margin-bottom: 10px;
 }
 
 .checkboxcustome{
