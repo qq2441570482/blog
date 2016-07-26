@@ -16,3 +16,6 @@
 /tmp
 .idea/
 coverage/
+node_modules/
+lib/capistrano/
+spec/views/
