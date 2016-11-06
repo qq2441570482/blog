@@ -17,8 +17,7 @@
           %tbody
             = render @articles
       - if @counts > 8
-        .panel-footer.cutomer-footer
+        .panel-footer.customer-footer
           = paginate @articles
   = render 'shared/search'
   = render 'shared/tag'
-= render 'shared/bottom'

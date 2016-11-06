@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require font-awesome
  *= require_tree .
  *= require_self
  */
@@ -18,7 +17,7 @@
 
 body{
   background-color: rgb(197, 214, 234);
-  font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana"
+  font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft Yahei", Helvetica, Arial, sans-serif
 }
 
 .customer-head{

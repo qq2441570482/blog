@@ -22,11 +22,10 @@
             %input(type="checkbox" id="checkall" value="全选")
             = submit_tag t('views.tags.index.delete_all'), class: 'btn btn-sm btn-link'
       - if @count > 8
-        .panel-footer.cutomer-footer
+        .panel-footer.customer-footer
           =paginate @tags
   = render 'shared/search'
   = render 'shared/recent'
-= render 'shared/bottom'
 
 
 :javascript

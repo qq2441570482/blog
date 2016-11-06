@@ -22,7 +22,7 @@
                 %i.fa.fa-tag
                   &nbsp;
                 - @article.tags.each do |tag|
-                  = link_to tag.name, "/welcomes/tag/#{tag.id}", class: 'btn btn-info btn-xs'
+                  = tag.name
             %hr
             - if @article.content
               = markdown(@article.content)
@@ -34,6 +34,5 @@
   = render 'shared/search'
   = render 'shared/tag'
   = render 'shared/recent'
-= render 'shared/bottom'
 
 

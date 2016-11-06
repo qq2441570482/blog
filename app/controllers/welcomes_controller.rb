@@ -2,11 +2,10 @@ class WelcomesController < ApplicationController
   before_action :all_articles, only: [:index, :tag, :archive, :tags]
   before_action :all_tags, only: [:index, :tag, :archive]
 
+  PAGE_SIZE = 5
+
   def index
-    @index_articles = Article.all.order(created_at: :desc).page(params[:page]).per(5)
-    if params[:condition].present?
-      @index_articles = @index_articles.search(:title_cont => params[:condition]).result
-    end
+    @articles = Article.all.order(created_at: :desc).page(params[:page]).per(PAGE_SIZE)
   end
 
   def archive
@@ -25,10 +24,6 @@ class WelcomesController < ApplicationController
 
   def tags
     @tags = Tag.all.sort_by { |tag| -tag.articles.count }
-  end
-
-  def rss
-    @articles = Article.all.order(created_at: :desc)
   end
 
   private
