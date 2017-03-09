@@ -24,6 +24,7 @@ gem 'nokogiri'
 gem 'kaminari'
 gem 'rspec-rails'
 gem 'cucumber'
+gem 'rubocop'
 
 group :test do
   gem 'database_cleaner'

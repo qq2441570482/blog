@@ -5,15 +5,13 @@ class ApplicationController < ActionController::Base
 
   skip_before_action :verify_authenticity_token
 
-  before_action :get_title
+  before_action :application_title
 
   def require_login
-    unless session[:user_id]
-      redirect_to signin_path
-    end
+    redirect_to signin_path if session[:user_id].nil?
   end
 
-  def get_title
+  def application_title
     @title = '青春如同奔流的江河'
   end
 
